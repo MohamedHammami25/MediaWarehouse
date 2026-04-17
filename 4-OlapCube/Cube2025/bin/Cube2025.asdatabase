@@ -1,0 +1,2073 @@
+﻿<Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Cube2025</ID>
+  <Name>Cube2025</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <LastUpdate>0001-01-01T00:00:00Z</LastUpdate>
+  <DataSourceImpersonationInfo>
+    <ImpersonationMode>Default</ImpersonationMode>
+    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+  </DataSourceImpersonationInfo>
+  <Dimensions>
+    <Dimension>
+      <ID>Dim Certification</ID>
+      <Name>Dim Certification</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3409" scrolltop="-7471" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10287" y="16531" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCertification" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3429" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000650d000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimCertification" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-3409</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-7471</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>Media Warehouse</DataSourceViewID>
+      </Source>
+      <UnknownMember>Visible</UnknownMember>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Certification Key</ID>
+          <Name>Certification Key</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <NullProcessing>UnknownMember</NullProcessing>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimCertification</TableID>
+                <ColumnID>CertificationKey</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Certification Name</AttributeID>
+              <Name>Certification Name</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Certification Name</ID>
+          <Name>Certification Name</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>50</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimCertification</TableID>
+                <ColumnID>CertificationName</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Person</ID>
+      <Name>Dim Person</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3623" scrolltop="-7292" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10287" y="16531" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimPerson" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00009b070000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimPerson" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-3623</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-7292</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>Media Warehouse</DataSourceViewID>
+      </Source>
+      <UnknownMember>Visible</UnknownMember>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Person Key</ID>
+          <Name>Person Key</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <NullProcessing>UnknownMember</NullProcessing>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimPerson</TableID>
+                <ColumnID>PersonKey</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Person Name</AttributeID>
+              <Name>Person Name</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Person Role</AttributeID>
+              <Name>Person Role</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Person Name</ID>
+          <Name>Person Name</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>500</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimPerson</TableID>
+                <ColumnID>PersonName</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Person Role</ID>
+          <Name>Person Role</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>50</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimPerson</TableID>
+                <ColumnID>PersonRole</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Language</ID>
+      <Name>Dim Language</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3557" scrolltop="-7471" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10287" y="16531" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimLanguage" left="528" top="21" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3133" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e00003d0c000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimLanguage" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-3557</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-7471</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>528</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>21</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>Media Warehouse</DataSourceViewID>
+      </Source>
+      <UnknownMember>Visible</UnknownMember>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Language Key</ID>
+          <Name>Language Key</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <NullProcessing>UnknownMember</NullProcessing>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimLanguage</TableID>
+                <ColumnID>LanguageKey</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Language Code</AttributeID>
+              <Name>Language Code</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Language Code</ID>
+          <Name>Language Code</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>10</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimLanguage</TableID>
+                <ColumnID>LanguageCode</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Date</ID>
+      <Name>Dim Date</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3623" scrolltop="-6392" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10287" y="16531" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDate" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000a30e0000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimDate" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-3623</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-6392</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>Media Warehouse</DataSourceViewID>
+      </Source>
+      <UnknownMember>Visible</UnknownMember>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Date Key</ID>
+          <Name>Date Key</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <NullProcessing>UnknownMember</NullProcessing>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimDate</TableID>
+                <ColumnID>DateKey</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Full Date</AttributeID>
+              <Name>Full Date</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Day</AttributeID>
+              <Name>Day</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Month</AttributeID>
+              <Name>Month</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Year</AttributeID>
+              <Name>Year</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Quarter</AttributeID>
+              <Name>Quarter</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Day Of Week</AttributeID>
+              <Name>Day Of Week</Name>
+            </AttributeRelationship>
+            <AttributeRelationship>
+              <AttributeID>Is Weekend</AttributeID>
+              <Name>Is Weekend</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Full Date</ID>
+          <Name>Full Date</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Date</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimDate</TableID>
+                <ColumnID>FullDate</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Day</ID>
+          <Name>Day</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimDate</TableID>
+                <ColumnID>Day</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Month</ID>
+          <Name>Month</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimDate</TableID>
+                <ColumnID>Month</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Year</ID>
+          <Name>Year</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimDate</TableID>
+                <ColumnID>Year</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Quarter</ID>
+          <Name>Quarter</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimDate</TableID>
+                <ColumnID>Quarter</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Day Of Week</ID>
+          <Name>Day Of Week</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimDate</TableID>
+                <ColumnID>DayOfWeek</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Is Weekend</ID>
+          <Name>Is Weekend</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Boolean</DataType>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimDate</TableID>
+                <ColumnID>IsWeekend</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Content Type</ID>
+      <Name>Dim Content Type</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3335" scrolltop="-7471" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10287" y="16531" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimContentType" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3577" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000f90d000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimContentType" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-3335</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-7471</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>Media Warehouse</DataSourceViewID>
+      </Source>
+      <UnknownMember>Visible</UnknownMember>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Content Type Key</ID>
+          <Name>Content Type Key</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <NullProcessing>UnknownMember</NullProcessing>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimContentType</TableID>
+                <ColumnID>ContentTypeKey</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Content Type Name</AttributeID>
+              <Name>Content Type Name</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Content Type Name</ID>
+          <Name>Content Type Name</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>50</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimContentType</TableID>
+                <ColumnID>ContentTypeName</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+    <Dimension>
+      <ID>Dim Genre</ID>
+      <Name>Dim Genre</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3623" scrolltop="-7471" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10287" y="16531" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimGenre" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimGenre" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-3623</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-7471</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>Media Warehouse</DataSourceViewID>
+      </Source>
+      <UnknownMember>Visible</UnknownMember>
+      <ErrorConfiguration>
+        <KeyNotFound>ReportAndStop</KeyNotFound>
+        <KeyDuplicate>ReportAndStop</KeyDuplicate>
+        <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+      </ErrorConfiguration>
+      <CurrentStorageMode>Molap</CurrentStorageMode>
+      <Attributes>
+        <Attribute>
+          <ID>Genre Key</ID>
+          <Name>Genre Key</Name>
+          <Usage>Key</Usage>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Integer</DataType>
+              <NullProcessing>UnknownMember</NullProcessing>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimGenre</TableID>
+                <ColumnID>GenreKey</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <AttributeRelationships>
+            <AttributeRelationship>
+              <AttributeID>Genre Name</AttributeID>
+              <Name>Genre Name</Name>
+            </AttributeRelationship>
+          </AttributeRelationships>
+          <OrderBy>Key</OrderBy>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+        <Attribute>
+          <ID>Genre Name</ID>
+          <Name>Genre Name</Name>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>200</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dw_DimGenre</TableID>
+                <ColumnID>GenreName</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+          <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+        </Attribute>
+      </Attributes>
+      <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+    </Dimension>
+  </Dimensions>
+  <Cubes>
+    <Cube>
+      <ID>Media Warehouse</ID>
+      <Name>Media Warehouse</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="40" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2854" scrolltop="-5000" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="29379" y="8721" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCertification" left="29421" top="17340" logicalid="20" controlid="1" masterid="0" hint1="0" hint2="0" width="3429" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000650d000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimCertification" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactMovies" left="20849" top="0" logicalid="21" controlid="2" masterid="0" hint1="0" hint2="0" width="3620" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000240e000088130000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_FactMovies" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimContentType" left="5891" top="359" logicalid="22" controlid="3" masterid="0" hint1="0" hint2="0" width="3577" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000f90d000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimContentType" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimDate" left="18311" top="7400" logicalid="23" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="3747" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000a30e0000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimDate" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactContentGenre" left="20" top="0" logicalid="24" controlid="5" masterid="0" hint1="0" hint2="0" width="3471" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e00008f0d000003090000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_FactContentGenre" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimLanguage" left="12468" top="15166" logicalid="25" controlid="6" masterid="0" hint1="0" hint2="0" width="3133" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e00003d0c000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimLanguage" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactSeries" left="18001" top="13547" logicalid="26" controlid="7" masterid="0" hint1="0" hint2="0" width="3620" height="4826" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000240e0000da120000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_FactSeries" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimGenre" left="255" top="4707" logicalid="27" controlid="8" masterid="0" hint1="0" hint2="0" width="3000" height="1588" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000034060000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimGenre" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimPerson" left="24021" top="12993" logicalid="28" controlid="9" masterid="0" hint1="0" hint2="0" width="3000" height="1947" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000e0000b80b00009b070000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dw_DimPerson" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="22909" top="4700" logicalid="29" controlid="10" masterid="0" hint1="0" hint2="0" width="8626" height="13140" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactMovies_DimCertification]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="2" sourceattachpoint="4" destattachpoint="9" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="31135" y="17340" />
+                  <point x="31135" y="11170" />
+                  <point x="23209" y="11170" />
+                  <point x="23209" y="5000" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="21321" top="16210" logicalid="30" controlid="11" masterid="0" hint1="0" hint2="0" width="8400" height="2324" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactSeries_DimCertification]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="7" sourceattachpoint="12" destattachpoint="25" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="29421" y="18134" />
+                  <point x="25521" y="18134" />
+                  <point x="25521" y="16510" />
+                  <point x="21621" y="16510" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="19412" top="4700" logicalid="31" controlid="12" masterid="0" hint1="0" hint2="0" width="2997" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactMovies_DimDate]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="2" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="19811" y="7400" />
+                  <point x="19811" y="6200" />
+                  <point x="22109" y="6200" />
+                  <point x="22109" y="5000" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="13635" top="4700" logicalid="32" controlid="13" masterid="0" hint1="0" hint2="0" width="8224" height="10966" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactMovies_DimLanguage]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="2" sourceattachpoint="4" destattachpoint="3" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="14034" y="15166" />
+                  <point x="14034" y="10083" />
+                  <point x="21559" y="10083" />
+                  <point x="21559" y="5000" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="22359" top="4700" logicalid="33" controlid="14" masterid="0" hint1="0" hint2="0" width="3562" height="8793" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactMovies_DimPerson]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="9" destid="2" sourceattachpoint="4" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="25521" y="12993" />
+                  <point x="25521" y="8997" />
+                  <point x="22659" y="8997" />
+                  <point x="22659" y="5000" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="3191" top="754" logicalid="34" controlid="15" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactContentGenre_DimContentType]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="5" sourceattachpoint="16" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="5891" y="1153" />
+                  <point x="3491" y="1153" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="19412" top="10648" logicalid="35" controlid="16" masterid="0" hint1="0" hint2="0" width="799" height="3199" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactSeries_DimDate]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="7" sourceattachpoint="5" destattachpoint="6" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="19811" y="11147" />
+                  <point x="19811" y="13547" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="1356" top="2007" logicalid="36" controlid="17" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactContentGenre_DimGenre]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="8" destid="5" sourceattachpoint="4" destattachpoint="5" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="1755" y="4707" />
+                  <point x="1755" y="2307" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="15301" top="15561" logicalid="37" controlid="18" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactSeries_DimLanguage]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="6" destid="7" sourceattachpoint="13" destattachpoint="22" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="15601" y="15960" />
+                  <point x="18001" y="15960" />
+                </connector>
+              </ddscontrol>
+              <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="21321" top="13567" logicalid="38" controlid="19" masterid="0" hint1="0" hint2="0" width="3000" height="1593" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobj>
+                    <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                  </ddsxmlobj>
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dataSet.Relations[FK_FactSeries_DimDirector]" vartype="8" />
+                    <property name="Virtual" value="0" vartype="11" />
+                    <property name="VisibleAP" value="0" vartype="3" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <connector lineroutestyle="MSDDS.Rectilinear" sourceid="9" destid="7" sourceattachpoint="12" destattachpoint="19" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                  <point x="24021" y="13966" />
+                  <point x="22821" y="13966" />
+                  <point x="22821" y="14860" />
+                  <point x="21621" y="14860" />
+                </connector>
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-2854</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-5000</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>75</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Dimensions>
+        <Dimension>
+          <ID>Dim Certification</ID>
+          <Name>Dim Certification</Name>
+          <DimensionID>Dim Certification</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Certification Key</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Certification Name</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Dim Language</ID>
+          <Name>Dim Language</Name>
+          <DimensionID>Dim Language</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Language Key</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Language Code</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Dim Date</ID>
+          <Name>Dim Date</Name>
+          <DimensionID>Dim Date</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Date Key</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Full Date</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Day</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Month</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Year</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Quarter</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Day Of Week</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Is Weekend</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Dim Content Type</ID>
+          <Name>Dim Content Type</Name>
+          <DimensionID>Dim Content Type</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Content Type Key</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Content Type Name</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Dim Genre</ID>
+          <Name>Dim Genre</Name>
+          <DimensionID>Dim Genre</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Genre Key</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Genre Name</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Dim Person</ID>
+          <Name>Dim Person</Name>
+          <DimensionID>Dim Person</DimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Person Key</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Person Name</AttributeID>
+            </Attribute>
+            <Attribute>
+              <AttributeID>Person Role</AttributeID>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <MeasureGroups>
+        <MeasureGroup>
+          <ID>Fact Series</ID>
+          <Name>Fact Series</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Measures>
+            <Measure>
+              <ID>User Score Average</ID>
+              <Name>User Score Average</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactSeries</TableID>
+                  <ColumnID>UserScoreAverage</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Vote Count</ID>
+              <Name>Vote Count</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactSeries</TableID>
+                  <ColumnID>VoteCount</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Popularity</ID>
+              <Name>Popularity</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactSeries</TableID>
+                  <ColumnID>Popularity</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Fact Series Nombre</ID>
+              <Name>Fact Series Nombre</Name>
+              <AggregateFunction>Count</AggregateFunction>
+              <Source>
+                <DataType>Integer</DataType>
+                <DataSize>4</DataSize>
+                <Source xsi:type="RowBinding">
+                  <TableID>dw_FactSeries</TableID>
+                </Source>
+              </Source>
+            </Measure>
+          </Measures>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Dimensions>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Certification</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Certification Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactSeries</TableID>
+                        <ColumnID>CertificationKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Person</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Person Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactSeries</TableID>
+                        <ColumnID>DirectorKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Language</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Language Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactSeries</TableID>
+                        <ColumnID>LanguageKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactSeries</TableID>
+                        <ColumnID>DateKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Partitions>
+            <Partition>
+              <ID>Fact Series</ID>
+              <Name>Fact Series</Name>
+              <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+              <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+              <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+              <State>Unprocessed</State>
+              <Source xsi:type="DsvTableBinding">
+                <DataSourceViewID>Media Warehouse</DataSourceViewID>
+                <TableID>dw_FactSeries</TableID>
+              </Source>
+              <StorageMode>Molap</StorageMode>
+              <CurrentStorageMode>Molap</CurrentStorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+            </Partition>
+          </Partitions>
+        </MeasureGroup>
+        <MeasureGroup>
+          <ID>Fact Movies</ID>
+          <Name>Fact Movies</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Measures>
+            <Measure>
+              <ID>User Score Average - Fact Movies</ID>
+              <Name>User Score Average - Fact Movies</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactMovies</TableID>
+                  <ColumnID>UserScoreAverage</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Vote Count - Fact Movies</ID>
+              <Name>Vote Count - Fact Movies</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactMovies</TableID>
+                  <ColumnID>VoteCount</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Popularity - Fact Movies</ID>
+              <Name>Popularity - Fact Movies</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactMovies</TableID>
+                  <ColumnID>Popularity</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Runtime</ID>
+              <Name>Runtime</Name>
+              <Source>
+                <DataType>Integer</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactMovies</TableID>
+                  <ColumnID>Runtime</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Budget</ID>
+              <Name>Budget</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactMovies</TableID>
+                  <ColumnID>Budget</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Revenue</ID>
+              <Name>Revenue</Name>
+              <Source>
+                <DataType>Double</DataType>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dw_FactMovies</TableID>
+                  <ColumnID>Revenue</ColumnID>
+                </Source>
+              </Source>
+            </Measure>
+            <Measure>
+              <ID>Fact Movies Nombre</ID>
+              <Name>Fact Movies Nombre</Name>
+              <AggregateFunction>Count</AggregateFunction>
+              <Source>
+                <DataType>Integer</DataType>
+                <DataSize>4</DataSize>
+                <Source xsi:type="RowBinding">
+                  <TableID>dw_FactMovies</TableID>
+                </Source>
+              </Source>
+            </Measure>
+          </Measures>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Dimensions>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Date</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Date Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactMovies</TableID>
+                        <ColumnID>DateKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Language</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Language Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactMovies</TableID>
+                        <ColumnID>LanguageKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Person</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Person Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactMovies</TableID>
+                        <ColumnID>DirectorKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Certification</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Certification Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactMovies</TableID>
+                        <ColumnID>CertificationKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Partitions>
+            <Partition>
+              <ID>Fact Movies</ID>
+              <Name>Fact Movies</Name>
+              <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+              <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+              <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+              <State>Unprocessed</State>
+              <Source xsi:type="DsvTableBinding">
+                <DataSourceViewID>Media Warehouse</DataSourceViewID>
+                <TableID>dw_FactMovies</TableID>
+              </Source>
+              <StorageMode>Molap</StorageMode>
+              <CurrentStorageMode>Molap</CurrentStorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+            </Partition>
+          </Partitions>
+        </MeasureGroup>
+        <MeasureGroup>
+          <ID>Fact Content Genre</ID>
+          <Name>Fact Content Genre</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Measures>
+            <Measure>
+              <ID>Fact Content Genre Nombre</ID>
+              <Name>Fact Content Genre Nombre</Name>
+              <AggregateFunction>Count</AggregateFunction>
+              <Source>
+                <DataType>Integer</DataType>
+                <DataSize>4</DataSize>
+                <Source xsi:type="RowBinding">
+                  <TableID>dw_FactContentGenre</TableID>
+                </Source>
+              </Source>
+            </Measure>
+          </Measures>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <Dimensions>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Content Type</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Content Type Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactContentGenre</TableID>
+                        <ColumnID>ContentTypeKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension xsi:type="RegularMeasureGroupDimension">
+              <CubeDimensionID>Dim Genre</CubeDimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Genre Key</AttributeID>
+                  <KeyColumns>
+                    <KeyColumn>
+                      <DataType>Integer</DataType>
+                      <NullProcessing>UnknownMember</NullProcessing>
+                      <Source xsi:type="ColumnBinding">
+                        <TableID>dw_FactContentGenre</TableID>
+                        <ColumnID>GenreKey</ColumnID>
+                      </Source>
+                    </KeyColumn>
+                  </KeyColumns>
+                  <Type>Granularity</Type>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <Partitions>
+            <Partition>
+              <ID>Fact Content Genre</ID>
+              <Name>Fact Content Genre</Name>
+              <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+              <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+              <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+              <State>Unprocessed</State>
+              <Source xsi:type="DsvTableBinding">
+                <DataSourceViewID>Media Warehouse</DataSourceViewID>
+                <TableID>dw_FactContentGenre</TableID>
+              </Source>
+              <StorageMode>Molap</StorageMode>
+              <CurrentStorageMode>Molap</CurrentStorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+            </Partition>
+          </Partitions>
+        </MeasureGroup>
+      </MeasureGroups>
+      <Source>
+        <DataSourceViewID>Media Warehouse</DataSourceViewID>
+      </Source>
+    </Cube>
+  </Cubes>
+  <DataSources>
+    <DataSource xsi:type="RelationalDataSource">
+      <ID>Media Warehouse</ID>
+      <Name>Media Warehouse</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <ConnectionString>Provider=MSOLEDBSQL19.1;Data Source=DESKTOP-GNV28IH;Integrated Security=SSPI;Initial Catalog=MediaWarehouse</ConnectionString>
+      <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
+      <ImpersonationInfo>
+        <ImpersonationMode>ImpersonateServiceAccount</ImpersonationMode>
+        <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+      </ImpersonationInfo>
+      <Timeout>PT0S</Timeout>
+    </DataSource>
+  </DataSources>
+  <DataSourceViews>
+    <DataSourceView>
+      <ID>Media Warehouse</ID>
+      <Name>Media Warehouse</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+          <Value>_ALL_TABLES_</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+          <Value></Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+          <Value>
+            <Layouts xmlns="">
+              <Diagram>
+                <Name>_ALL_TABLES_</Name>
+                <DiagramLayout />
+                <ShowRelationshipNames>False</ShowRelationshipNames>
+                <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+                <DiagramViewPortLeft>0</DiagramViewPortLeft>
+                <DiagramViewPortTop>0</DiagramViewPortTop>
+                <DiagramBoundingLeft>0</DiagramBoundingLeft>
+                <DiagramBoundingTop>0</DiagramBoundingTop>
+                <DiagramZoom>100</DiagramZoom>
+              </Diagram>
+            </Layouts>
+          </Value>
+        </Annotation>
+      </Annotations>
+      <DataSourceID>Media Warehouse</DataSourceID>
+      <Schema>
+        <xs:schema id="Media_x0020_Warehouse" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+          <xs:element name="Media_x0020_Warehouse" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="cec5ae37-b67e-457d-bd1c-d5ff44d27492">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="dw_DimCertification" msprop:design-time-name="d9701f70-6ea8-4add-bc29-b426e84a7b83" msprop:FriendlyName="DimCertification" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="DimCertification">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="CertificationKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="CertificationKey" msprop:DbColumnName="CertificationKey" msprop:design-time-name="700ec15e-58e0-40ce-b95a-6b8aa2f400b0" type="xs:int" />
+                      <xs:element name="CertificationName" msprop:FriendlyName="CertificationName" msprop:DbColumnName="CertificationName" msprop:design-time-name="fd69f765-fa02-4bdc-aff9-1762be295b4e" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="50" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dw_DimContentType" msprop:design-time-name="c9674525-b5a4-4df4-94f1-cdf3b5503103" msprop:FriendlyName="DimContentType" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="DimContentType">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ContentTypeKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ContentTypeKey" msprop:DbColumnName="ContentTypeKey" msprop:design-time-name="4f5a3dc0-5b3a-4303-9285-5a5e5dd3aad4" type="xs:int" />
+                      <xs:element name="ContentTypeName" msprop:FriendlyName="ContentTypeName" msprop:DbColumnName="ContentTypeName" msprop:design-time-name="fdcbd9a2-fc5e-4913-9a72-0601a0910733" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="50" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dw_DimDate" msprop:design-time-name="d6feb153-e81c-4432-a315-6d82d0e2eb7a" msprop:FriendlyName="DimDate" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="DimDate">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="DateKey" msprop:FriendlyName="DateKey" msprop:DbColumnName="DateKey" msprop:design-time-name="1d242ab3-3c85-4d45-8efa-d15d967a3c5e" type="xs:int" />
+                      <xs:element name="FullDate" msprop:FriendlyName="FullDate" msprop:DbColumnName="FullDate" msprop:design-time-name="4c48e724-1e8f-42e8-b2ea-3e82ca844d2d" type="xs:dateTime" minOccurs="0" />
+                      <xs:element name="Day" msprop:FriendlyName="Day" msprop:DbColumnName="Day" msprop:design-time-name="f3023f88-8aec-4609-8015-bf9dc296152f" type="xs:int" minOccurs="0" />
+                      <xs:element name="Month" msprop:FriendlyName="Month" msprop:DbColumnName="Month" msprop:design-time-name="58fc8764-d982-4d86-83b3-700d64790847" type="xs:int" minOccurs="0" />
+                      <xs:element name="Year" msprop:FriendlyName="Year" msprop:DbColumnName="Year" msprop:design-time-name="c671717c-19b6-4546-98b0-bae989e94158" type="xs:int" minOccurs="0" />
+                      <xs:element name="Quarter" msprop:FriendlyName="Quarter" msprop:DbColumnName="Quarter" msprop:design-time-name="a7081026-3c27-4fdd-998b-fa6194b57487" type="xs:int" minOccurs="0" />
+                      <xs:element name="DayOfWeek" msprop:FriendlyName="DayOfWeek" msprop:DbColumnName="DayOfWeek" msprop:design-time-name="26189ba6-a03f-4c84-bdc9-fe1173dc6c1e" type="xs:int" minOccurs="0" />
+                      <xs:element name="IsWeekend" msprop:FriendlyName="IsWeekend" msprop:DbColumnName="IsWeekend" msprop:design-time-name="f9b8cea3-d668-44d9-8412-cd6efed858c2" type="xs:boolean" minOccurs="0" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dw_DimGenre" msprop:design-time-name="7320d18d-ab3b-4060-a8ed-0b5e9023ce15" msprop:FriendlyName="DimGenre" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="DimGenre">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="GenreKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="GenreKey" msprop:DbColumnName="GenreKey" msprop:design-time-name="5cbb91fb-5f7b-4494-9e78-bdc042f4ae3b" type="xs:int" />
+                      <xs:element name="GenreName" msprop:FriendlyName="GenreName" msprop:DbColumnName="GenreName" msprop:design-time-name="e2a9c474-725a-4843-9d53-50084816f7b4" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="200" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dw_DimLanguage" msprop:design-time-name="78f21dca-38f0-49ad-9d9d-42b797f0b48b" msprop:FriendlyName="DimLanguage" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="DimLanguage">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="LanguageKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="LanguageKey" msprop:DbColumnName="LanguageKey" msprop:design-time-name="2180dcf8-ab86-4f5f-b8b8-7aba506aa30d" type="xs:int" />
+                      <xs:element name="LanguageCode" msprop:FriendlyName="LanguageCode" msprop:DbColumnName="LanguageCode" msprop:design-time-name="096c4d91-7f06-47ae-887d-53ad57faadf4" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="10" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dw_DimPerson" msprop:design-time-name="57c2822b-fef4-4bf5-a4ed-699ecfc765a2" msprop:FriendlyName="DimPerson" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="DimPerson">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="PersonKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="PersonKey" msprop:DbColumnName="PersonKey" msprop:design-time-name="42481f1d-abbd-4fea-bfd8-bb1a7f32ff48" type="xs:int" />
+                      <xs:element name="PersonName" msprop:FriendlyName="PersonName" msprop:DbColumnName="PersonName" msprop:design-time-name="ddbc3bf3-acd9-4e3d-ac99-e66213815778">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="500" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="PersonRole" msprop:FriendlyName="PersonRole" msprop:DbColumnName="PersonRole" msprop:design-time-name="300e4068-30ff-47b5-9ca8-6ffd0a629f78" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="50" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dw_FactContentGenre" msprop:design-time-name="135b337c-29e3-4c68-98f5-19d38f190aa5" msprop:FriendlyName="FactContentGenre" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="FactContentGenre">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="ContentGenreKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="ContentGenreKey" msprop:DbColumnName="ContentGenreKey" msprop:design-time-name="78c24bb4-2fee-4727-bf32-b61abdb7a0cb" type="xs:int" />
+                      <xs:element name="ContentTypeKey" msprop:FriendlyName="ContentTypeKey" msprop:DbColumnName="ContentTypeKey" msprop:design-time-name="525951f3-8df6-414c-a64f-280233d54b39" type="xs:int" minOccurs="0" />
+                      <xs:element name="ContentId" msprop:FriendlyName="ContentId" msprop:DbColumnName="ContentId" msprop:design-time-name="239dacfb-3b76-4400-857a-8f2d92238008" type="xs:long" minOccurs="0" />
+                      <xs:element name="GenreKey" msprop:FriendlyName="GenreKey" msprop:DbColumnName="GenreKey" msprop:design-time-name="8bfc6613-2168-4b49-8884-822dd4185785" type="xs:int" minOccurs="0" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dw_FactMovies" msprop:design-time-name="0ff352b6-956f-498d-ab47-03d3452a9f16" msprop:FriendlyName="FactMovies" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="FactMovies">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="MovieKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="MovieKey" msprop:DbColumnName="MovieKey" msprop:design-time-name="c10e2ea9-e762-48d4-bb3b-6162bc2388c7" type="xs:int" />
+                      <xs:element name="MovieId" msprop:FriendlyName="MovieId" msprop:DbColumnName="MovieId" msprop:design-time-name="79c95ed1-cefb-4e4b-b4c0-82abd0615e2f" type="xs:long" minOccurs="0" />
+                      <xs:element name="Title" msprop:FriendlyName="Title" msprop:DbColumnName="Title" msprop:design-time-name="81266abd-80c9-4a8c-9efe-0c76b55cf952" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="500" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="DateKey" msprop:FriendlyName="DateKey" msprop:DbColumnName="DateKey" msprop:design-time-name="82aef71e-87c1-4fc0-b408-aec47d3193a9" type="xs:int" minOccurs="0" />
+                      <xs:element name="LanguageKey" msprop:FriendlyName="LanguageKey" msprop:DbColumnName="LanguageKey" msprop:design-time-name="f23242bb-16ec-4d1d-b9e7-4986285c7c70" type="xs:int" minOccurs="0" />
+                      <xs:element name="DirectorKey" msprop:FriendlyName="DirectorKey" msprop:DbColumnName="DirectorKey" msprop:design-time-name="c191a586-9be1-4a1a-904d-75299c058609" type="xs:int" minOccurs="0" />
+                      <xs:element name="MainCast" msprop:FriendlyName="MainCast" msprop:DbColumnName="MainCast" msprop:design-time-name="8df0d926-f512-477d-a664-e71dcd717366" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="2000" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="UserScoreAverage" msprop:FriendlyName="UserScoreAverage" msprop:DbColumnName="UserScoreAverage" msprop:design-time-name="22acd2e9-7b96-475c-a03d-c6e2657a7028" type="xs:double" minOccurs="0" />
+                      <xs:element name="VoteCount" msprop:FriendlyName="VoteCount" msprop:DbColumnName="VoteCount" msprop:design-time-name="405235a2-58df-46f2-a2ce-3ae28c2450e4" type="xs:int" minOccurs="0" />
+                      <xs:element name="Popularity" msprop:FriendlyName="Popularity" msprop:DbColumnName="Popularity" msprop:design-time-name="689f8ea5-7e86-427a-9171-5a088f36ac64" type="xs:double" minOccurs="0" />
+                      <xs:element name="Overview" msprop:FriendlyName="Overview" msprop:DbColumnName="Overview" msprop:design-time-name="61edbb74-17a9-4fbc-8256-331d59f7cd29" type="xs:string" minOccurs="0" />
+                      <xs:element name="Runtime" msprop:FriendlyName="Runtime" msprop:DbColumnName="Runtime" msprop:design-time-name="c758eb46-83b5-44e8-b541-f766cc15f5ad" type="xs:int" minOccurs="0" />
+                      <xs:element name="CertificationKey" msprop:FriendlyName="CertificationKey" msprop:DbColumnName="CertificationKey" msprop:design-time-name="b439cba5-33a3-44b3-971c-20610707db78" type="xs:int" minOccurs="0" />
+                      <xs:element name="Budget" msprop:FriendlyName="Budget" msprop:DbColumnName="Budget" msprop:design-time-name="ba1d0282-3307-49bc-8ff4-f2f7fbfc097c" type="xs:double" minOccurs="0" />
+                      <xs:element name="Revenue" msprop:FriendlyName="Revenue" msprop:DbColumnName="Revenue" msprop:design-time-name="0fa7463b-c09c-4973-8d62-731175e400ac" type="xs:double" minOccurs="0" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element name="dw_FactSeries" msprop:design-time-name="5e03b69f-6358-474d-adfc-7287f1e68b41" msprop:FriendlyName="FactSeries" msprop:TableType="Table" msprop:DbSchemaName="dw" msprop:DbTableName="FactSeries">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="SeriesKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:FriendlyName="SeriesKey" msprop:DbColumnName="SeriesKey" msprop:design-time-name="f8d72dd3-1782-41ed-ace1-d4dcfff10be7" type="xs:int" />
+                      <xs:element name="SeriesId" msprop:FriendlyName="SeriesId" msprop:DbColumnName="SeriesId" msprop:design-time-name="50bc57d0-d075-435d-bfbb-3beabc6fd9c0" type="xs:long" minOccurs="0" />
+                      <xs:element name="Title" msprop:FriendlyName="Title" msprop:DbColumnName="Title" msprop:design-time-name="bcfc70e4-ad54-4b45-9927-669ffcd62eba" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="500" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="DateKey" msprop:FriendlyName="DateKey" msprop:DbColumnName="DateKey" msprop:design-time-name="bb1fc5bf-c731-403b-94ac-5411094e8c01" type="xs:int" minOccurs="0" />
+                      <xs:element name="LanguageKey" msprop:FriendlyName="LanguageKey" msprop:DbColumnName="LanguageKey" msprop:design-time-name="31dc492c-ee28-40bb-a6bb-7fd0e0a09018" type="xs:int" minOccurs="0" />
+                      <xs:element name="DirectorKey" msprop:FriendlyName="DirectorKey" msprop:DbColumnName="DirectorKey" msprop:design-time-name="a3034ae8-0be0-45ce-8714-9c09264c0966" type="xs:int" minOccurs="0" />
+                      <xs:element name="CertificationKey" msprop:FriendlyName="CertificationKey" msprop:DbColumnName="CertificationKey" msprop:design-time-name="e858bae3-0bbf-4b42-8ec2-7522a5b3e3c9" type="xs:int" minOccurs="0" />
+                      <xs:element name="UserScoreAverage" msprop:FriendlyName="UserScoreAverage" msprop:DbColumnName="UserScoreAverage" msprop:design-time-name="4cc2903e-bc4e-499d-8244-2c23061390e5" type="xs:double" minOccurs="0" />
+                      <xs:element name="VoteCount" msprop:FriendlyName="VoteCount" msprop:DbColumnName="VoteCount" msprop:design-time-name="1b671d55-97fc-4e3d-a20f-cd01cd169ca9" type="xs:int" minOccurs="0" />
+                      <xs:element name="Popularity" msprop:FriendlyName="Popularity" msprop:DbColumnName="Popularity" msprop:design-time-name="44316c91-734e-4a3f-adfd-90e9f48c1d04" type="xs:double" minOccurs="0" />
+                      <xs:element name="Overview" msprop:FriendlyName="Overview" msprop:DbColumnName="Overview" msprop:design-time-name="dca71688-5f9d-47d7-a1d0-f8d33ec532ec" type="xs:string" minOccurs="0" />
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+            <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_DimCertification" />
+              <xs:field xpath="CertificationKey" />
+            </xs:unique>
+            <xs:unique name="dw_DimContentType_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_DimContentType" />
+              <xs:field xpath="ContentTypeKey" />
+            </xs:unique>
+            <xs:unique name="dw_DimDate_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_DimDate" />
+              <xs:field xpath="DateKey" />
+            </xs:unique>
+            <xs:unique name="dw_DimGenre_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_DimGenre" />
+              <xs:field xpath="GenreKey" />
+            </xs:unique>
+            <xs:unique name="dw_DimLanguage_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_DimLanguage" />
+              <xs:field xpath="LanguageKey" />
+            </xs:unique>
+            <xs:unique name="dw_DimPerson_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_DimPerson" />
+              <xs:field xpath="PersonKey" />
+            </xs:unique>
+            <xs:unique name="dw_FactContentGenre_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_FactContentGenre" />
+              <xs:field xpath="ContentGenreKey" />
+            </xs:unique>
+            <xs:unique name="dw_FactMovies_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_FactMovies" />
+              <xs:field xpath="MovieKey" />
+            </xs:unique>
+            <xs:unique name="dw_FactSeries_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+              <xs:selector xpath=".//dw_FactSeries" />
+              <xs:field xpath="SeriesKey" />
+            </xs:unique>
+            <xs:keyref name="FK_FactSeries_DimDate" refer="dw_DimDate_Constraint1">
+              <xs:selector xpath=".//dw_FactSeries" />
+              <xs:field xpath="DateKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactSeries_DimLanguage" refer="dw_DimLanguage_Constraint1">
+              <xs:selector xpath=".//dw_FactSeries" />
+              <xs:field xpath="LanguageKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactSeries_DimDirector" refer="dw_DimPerson_Constraint1">
+              <xs:selector xpath=".//dw_FactSeries" />
+              <xs:field xpath="DirectorKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactSeries_DimCertification" refer="Constraint1">
+              <xs:selector xpath=".//dw_FactSeries" />
+              <xs:field xpath="CertificationKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactMovies_DimCertification" refer="Constraint1">
+              <xs:selector xpath=".//dw_FactMovies" />
+              <xs:field xpath="CertificationKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactMovies_DimPerson" refer="dw_DimPerson_Constraint1">
+              <xs:selector xpath=".//dw_FactMovies" />
+              <xs:field xpath="DirectorKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactMovies_DimLanguage" refer="dw_DimLanguage_Constraint1">
+              <xs:selector xpath=".//dw_FactMovies" />
+              <xs:field xpath="LanguageKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactMovies_DimDate" refer="dw_DimDate_Constraint1">
+              <xs:selector xpath=".//dw_FactMovies" />
+              <xs:field xpath="DateKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactContentGenre_DimGenre" refer="dw_DimGenre_Constraint1">
+              <xs:selector xpath=".//dw_FactContentGenre" />
+              <xs:field xpath="GenreKey" />
+            </xs:keyref>
+            <xs:keyref name="FK_FactContentGenre_DimContentType" refer="dw_DimContentType_Constraint1">
+              <xs:selector xpath=".//dw_FactContentGenre" />
+              <xs:field xpath="ContentTypeKey" />
+            </xs:keyref>
+          </xs:element>
+        </xs:schema>
+        <Media_x0020_Warehouse xmlns="" />
+      </Schema>
+    </DataSourceView>
+  </DataSourceViews>
+</Database>

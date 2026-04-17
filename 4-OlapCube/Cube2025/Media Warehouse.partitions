@@ -1,0 +1,65 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f19907e5-9396-4086-b09d-00969b720c3e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Media Warehouse</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fact Series</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="bd8d51de-981c-4500-9a12-8b1d80069fe8">
+          <ID>Fact Series</ID>
+          <Name>Fact Series</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="3889fc25-9d29-4c98-8bb5-ea20453c7c14">
+            <DataSourceViewID>Media Warehouse</DataSourceViewID>
+            <TableID>dw_FactSeries</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Movies</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="527c4dcd-99bd-4c5c-b459-8514beedd149">
+          <ID>Fact Movies</ID>
+          <Name>Fact Movies</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="e8dbcbee-250e-42ea-8720-daed0dfd77b5">
+            <DataSourceViewID>Media Warehouse</DataSourceViewID>
+            <TableID>dw_FactMovies</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Content Genre</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="13a1dc64-cef2-4818-a64e-ad40b18376f2">
+          <ID>Fact Content Genre</ID>
+          <Name>Fact Content Genre</Name>
+          <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="2e1b7978-e9c7-4baf-85f0-e638936accc0">
+            <DataSourceViewID>Media Warehouse</DataSourceViewID>
+            <TableID>dw_FactContentGenre</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

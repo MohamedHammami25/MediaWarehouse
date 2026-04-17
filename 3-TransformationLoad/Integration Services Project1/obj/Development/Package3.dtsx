@@ -1,0 +1,595 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/9/2026 11:27:59 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-UFGRP3H"
+  DTS:CreatorName="DESKTOP-UFGRP3H\m5538"
+  DTS:DTSID="{30E3EE7B-491E-4842-99E3-5DD162345187}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package3"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{103BAF68-377E-446A-A7BE-F0A2CDE0A4D7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-UFGRP3H.MediaWareHouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E0212D71-F027-40D9-9B71-5888B92E79B4}"
+      DTS:ObjectName="DESKTOP-UFGRP3H.MediaWareHouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-UFGRP3H;Initial Catalog=MediaWareHouse;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package3-{E0212D71-F027-40D9-9B71-5888B92E79B4}DESKTOP-UFGRP3H.MediaWareHouse;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tâche de flux de données"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{DC959FFD-6D58-4622-96DB-F65C9E25C8B7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche de flux de données"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tâche de flux de données\CertificationFilm"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="CertificationFilm"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT certification FROM staging.FilmsRaw</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\CertificationFilm.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-UFGRP3H.MediaWareHouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-UFGRP3H.MediaWareHouse]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie de source OLE DB].Columns[certification]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie de source OLE DB].ExternalColumns[certification]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie de source OLE DB].Columns[certification]"
+                      name="certification"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie de source OLE DB].ExternalColumns[certification]"
+                      dataType="wstr"
+                      length="50"
+                      name="certification" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie d'erreur de source OLE DB].Columns[certification]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie d'erreur de source OLE DB].Columns[certification]"
+                      name="certification" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\CertificationSerie"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="CertificationSerie"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT certification_us FROM staging.SeriesRaw</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tâche de flux de données\CertificationSerie.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-UFGRP3H.MediaWareHouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-UFGRP3H.MediaWareHouse]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie de source OLE DB].Columns[certification_us]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie de source OLE DB].ExternalColumns[certification_us]"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie de source OLE DB].Columns[certification_us]"
+                      name="certification_us"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie de source OLE DB].ExternalColumns[certification_us]"
+                      dataType="wstr"
+                      length="50"
+                      name="certification_us" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie d'erreur de source OLE DB].Columns[certification_us]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie d'erreur de source OLE DB].Columns[certification_us]"
+                      name="certification_us" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[certification]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="certification"
+                      lineageId="Package\Tâche de flux de données\Unir tout.Outputs[Unir tout sortie 1].Columns[certification]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[CertificationRaw]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[CertificationRaw]"
+                      name="CertificationRaw"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Tâche de flux de données\Unir tout.Outputs[Unir tout sortie 1].Columns[certification]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">certification</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tâche de flux de données\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tâche de flux de données\Unir tout"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="Unir tout"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Tâche de flux de données\Unir tout.Inputs[Unir tout entrée 1]"
+                  name="Unir tout entrée 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Unir tout.Inputs[Unir tout entrée 1].Columns[certification_us]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="certification_us"
+                      lineageId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie de source OLE DB].Columns[certification_us]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Tâche de flux de données\Unir tout.Outputs[Unir tout sortie 1].Columns[certification]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tâche de flux de données\Unir tout.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tâche de flux de données\Unir tout.Inputs[Entrée Union All 1].Columns[certification]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="certification"
+                      lineageId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie de source OLE DB].Columns[certification]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Tâche de flux de données\Unir tout.Outputs[Unir tout sortie 1].Columns[certification]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Tâche de flux de données\Unir tout.Inputs[Entrée Union All 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tâche de flux de données\Unir tout.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tâche de flux de données\Unir tout.Outputs[Unir tout sortie 1].Columns[certification]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Tâche de flux de données\Unir tout.Outputs[Unir tout sortie 1].Columns[certification]"
+                      name="certification" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
+              endId="Package\Tâche de flux de données\Unir tout.Inputs[Unir tout entrée 1]"
+              name="Sortie de source OLE DB"
+              startId="Package\Tâche de flux de données\CertificationSerie.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Sortie de source OLE DB1]"
+              endId="Package\Tâche de flux de données\Unir tout.Inputs[Entrée Union All 1]"
+              name="Sortie de source OLE DB"
+              startId="Package\Tâche de flux de données\CertificationFilm.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\Tâche de flux de données.Paths[Unir tout sortie 1]"
+              endId="Package\Tâche de flux de données\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              name="Unir tout sortie 1"
+              startId="Package\Tâche de flux de données\Unir tout.Outputs[Unir tout sortie 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="197.6,41.6"
+          Id="Package\Tâche de flux de données"
+          TopLeft="339.99998142322,200.199998607834" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tâche de flux de données">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Tâche de flux de données\CertificationFilm"
+          TopLeft="154.999991531174,115.266665865117" />
+        <NodeLayout
+          Size="157.6,41.6"
+          Id="Package\Tâche de flux de données\CertificationSerie"
+          TopLeft="155.833324818976,188.066665358875" />
+        <NodeLayout
+          Size="117.6,41.6"
+          Id="Package\Tâche de flux de données\Unir tout"
+          TopLeft="404.999977871777,157.733332236475" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de source OLE DB]"
+          TopLeft="313.433324818976,208.866665358875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="91.5666530528007,-30.3333331223991"
+              Start="0,0"
+              End="84.0666530528007,-30.3333331223991">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.7833265264004,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="41.7833265264004,0"
+                    Point2="45.7833265264004,0"
+                    Point3="45.7833265264004,-4" />
+                  <mssgle:LineSegment
+                    End="45.7833265264004,-26.3333331223991" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.7833265264004,-26.3333331223991"
+                    Point2="45.7833265264004,-30.3333331223991"
+                    Point3="49.7833265264004,-30.3333331223991" />
+                  <mssgle:LineSegment
+                    End="84.0666530528007,-30.3333331223991" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Sortie de source OLE DB1]"
+          TopLeft="308.599991531174,136.066665865117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96.3999863406029,36.8666663713587"
+              Start="0,0"
+              End="88.8999863406029,36.8666663713587">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="51.6977698856817,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.6977698856817,0"
+                    Point2="55.6977698856817,0"
+                    Point3="55.6977698856817,4" />
+                  <mssgle:LineSegment
+                    End="55.6977698856817,32.8666663713587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.6977698856817,32.8666663713587"
+                    Point2="55.6977698856817,36.8666663713587"
+                    Point3="59.6977698856817,36.8666663713587" />
+                  <mssgle:LineSegment
+                    End="88.8999863406029,36.8666663713587" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154.4,41.6"
+          Id="Package\Tâche de flux de données\Colonne dérivée"
+          TopLeft="388.333312115736,241.799998318553" />
+        <EdgeLayout
+          Id="Package\Tâche de flux de données.Paths[Unir tout sortie 1]"
+          TopLeft="464.666644993756,199.333332236475">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4666660820776"
+              Start="0,0"
+              End="0,34.9666660820776">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9666660820776" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\CertificationFilm">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tâche de flux de données\CertificationSerie">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

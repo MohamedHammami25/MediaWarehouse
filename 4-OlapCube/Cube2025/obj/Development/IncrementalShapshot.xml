@@ -1,0 +1,96 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Cube2025</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>AdN0laXsPmHMAj8pGeoIfcQPowM=07/12/2025 22:24:4607/12/2025 22:24:46</TimeStamp>
+        <ID>
+          <String>Media Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>uQ4UKDMOYIKXV1+KHLsHcSe+yak=07/12/2025 22:24:5907/12/2025 22:24:59</TimeStamp>
+        <ID>
+          <String>Media Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Z4pVaWlhZNApoqEIl5391mK+E/A=07/12/2025 22:28:3207/12/2025 22:26:59</TimeStamp>
+        <ID>
+          <String>Dim Certification</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>V0FCzJng31d4LNqpQmC8w/hgzeE=07/12/2025 22:29:4407/12/2025 22:26:59</TimeStamp>
+        <ID>
+          <String>Dim Person</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>DR0bG183ItdGY5YbW0DyOrvcdlw=07/12/2025 22:29:0107/12/2025 22:26:59</TimeStamp>
+        <ID>
+          <String>Dim Language</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>yRvJDhFDI3fqFwGB5z3h9zAVZOE=07/12/2025 22:28:0407/12/2025 22:26:59</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Dgge+tytEeJiOpbn2Sli6TgL6YU=07/12/2025 22:29:1607/12/2025 22:26:59</TimeStamp>
+        <ID>
+          <String>Dim Content Type</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>nvBx369ZcIWZ09dGBJtciKmm23c=07/12/2025 22:29:3007/12/2025 22:26:59</TimeStamp>
+        <ID>
+          <String>Dim Genre</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>CDqVS2UpRqIdOXTgDHAPucDUFo4=07/12/2025 22:30:0007/12/2025 22:26:58w9BGziPGfe+9LqcrmrHjxU1V/lI=07/12/2025 22:26:5907/12/2025 22:26:58</TimeStamp>
+        <ID>
+          <String>Media Warehouse</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>Q/YGPRDs09Br8caf8OgwQgclBGY=07/12/2025 22:24:1307/12/2025 22:24:13</TimeStamp>
+      <ID>
+        <String>Cube2025</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2025-12-07T21:30:11.94Z</LastDeployed>
+</DeploymentSnapshot>

@@ -1,0 +1,2454 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/1/2025 11:00:30 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GNV28IH"
+  DTS:CreatorName="DESKTOP-GNV28IH\User"
+  DTS:DTSID="{D5DA4202-C99F-4AD3-82DE-7E19F830C353}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package9"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{183E39D5-0C42-4347-93BA-AADF5DD16396}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C533CBF1-ECC7-4D70-A21D-9D42327279CD}"
+      DTS:ObjectName="DESKTOP-GNV28IH.MediaWarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GNV28IH;Initial Catalog=MediaWarehouse;Provider=MSOLEDBSQL19.1;Integrated Security=SSPI;Application Name=SSIS-Package9-{C533CBF1-ECC7-4D70-A21D-9D42327279CD}DESKTOP-GNV28IH.MediaWarehouse;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6823CD9-3B19-4D68-8F23-D4B25E29AB4C}"
+      DTS:ObjectName="DESKTOP-GNV28IH.MediaWarehouse 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GNV28IH;Initial Catalog=MediaWarehouse;Provider=MSOLEDBSQL19.1;Integrated Security=SSPI;Application Name=SSIS-Package9-{D6823CD9-3B19-4D68-8F23-D4B25E29AB4C}DESKTOP-GNV28IH.MediaWarehouse 1;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transformation"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{EC8275EC-0B74-4663-82E3-CC1CB050E0DA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Transformation\Colonne dérivée 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[movie_id]"
+                      cachedDataType="i8"
+                      cachedName="movie_id"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[movie_id]" />
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[genre_list]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="genre_list"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[genre_list]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[GenreListClean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="1000"
+                      lineageId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[GenreListClean]"
+                      name="GenreListClean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">([ISNULL](#{Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[genre_list]}) || [LEN]([LTRIM]([RTRIM](#{Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[genre_list]}))) == 0) ? NULL(DT_WSTR,1000) : (DT_WSTR,1000)#{Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[genre_list]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(ISNULL(genre_list) || LEN(LTRIM(RTRIM(genre_list))) == 0) ? NULL(DT_WSTR,1000) : (DT_WSTR,1000)genre_list</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[ContentId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[ContentId]"
+                      name="ContentId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[movie_id]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">movie_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Colonne dérivée 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transformation\Colonne dérivée 2.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 2.Inputs[Entrée de colonne dérivée].Columns[tv_id]"
+                      cachedDataType="i8"
+                      cachedName="tv_id"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[tv_id]" />
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 2.Inputs[Entrée de colonne dérivée].Columns[genre_list]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="genre_list"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[genre_list]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Transformation\Colonne dérivée 2.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie de colonne dérivée].Columns[GenreListClean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="1000"
+                      lineageId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie de colonne dérivée].Columns[GenreListClean]"
+                      name="GenreListClean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">([ISNULL](#{Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[genre_list]}) || [LEN]([LTRIM]([RTRIM](#{Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[genre_list]}))) == 0) ? NULL(DT_WSTR,1000) : (DT_WSTR,1000)#{Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[genre_list]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(ISNULL(genre_list) || LEN(LTRIM(RTRIM(genre_list))) == 0) ? NULL(DT_WSTR,1000) : (DT_WSTR,1000)genre_list</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie de colonne dérivée].Columns[ContentId]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie de colonne dérivée].Columns[ContentId]"
+                      name="ContentId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[tv_id]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">tv_id</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Transformation\Colonne dérivée 2.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Composant Script"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Inclut et exécute un code de script personnalisé. Par exemple, appliquez une règle d'entreprise qui limite la plage des valeurs valides dans une colonne « revenus » ou ajoutez des valeurs dans deux colonnes et calculez la moyenne de la somme.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;13"
+              description="Inclut et exécute un code de script personnalisé. Par exemple, appliquez une règle d'entreprise qui limite la plage des valeurs valides dans une colonne « revenus » ou ajoutez des valeurs dans deux colonnes et calculez la moyenne de la somme."
+              name="Composant Script"
+              version="13">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stocke le code source du composant"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="30">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public Sortie1Buffer Sortie1Buffer;
+
+    int InputsFinished = 0;
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Entrée 0", StringComparison.Ordinal))
+        {
+            Entrée0_ProcessInput(new Entrée0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+        if (Buffer.EndOfRowset)
+        {
+            InputsFinished = InputsFinished + 1;
+            if (InputsFinished == 1)
+            {
+                FinishOutputs();
+                MarkOutputsFinished();
+            }
+        }
+
+    }
+
+    public virtual void FinishOutputs()
+    {
+    }
+
+    private void MarkOutputsFinished()
+    {
+
+        if (null != Sortie1Buffer)
+        {
+            Sortie1Buffer.SetEndOfRowset();
+            Sortie1Buffer = null;
+        }
+
+    }
+
+    public override void PrimeOutput(int Outputs, int[] OutputIDs, PipelineBuffer[] Buffers, OutputNameMap OutputMap)
+    {
+       for(int Idx = 0; Idx < Outputs; Idx++)
+       {
+            if(OutputIDs[Idx] == GetOutputID(OutputMap, @"Sortie 1"))
+            {
+                Sortie1Buffer = new Sortie1Buffer(Buffers[Idx], GetColumnIndexes(OutputIDs[Idx]), OutputMap);
+            }
+        }
+
+        CreateNewOutputRows();
+
+    }
+
+    public virtual void CreateNewOutputRows()
+    {
+    }
+
+    public virtual void Entrée0_ProcessInput(Entrée0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Entrée0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Entrée0_ProcessInputRow(Entrée0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Entrée0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Entrée0_ProcessInputRow(Entrée0Buffer Row)
+    {
+        if (!Row.GenreListClean_IsNull && !string.IsNullOrWhiteSpace(Row.GenreListClean))
+        {
+            string[] genres = Row.GenreListClean.Split('|');
+
+            foreach (string g in genres)
+            {
+                string genreTrimmed = g.Trim();
+                if (!string.IsNullOrEmpty(genreTrimmed))
+                {
+                    Sortie1Buffer.AddRow();
+                    Sortie1Buffer.ContentId = Row.ContentId;
+                    Sortie1Buffer.ContentTypeKey = Row.ContentTypeKey;
+                    Sortie1Buffer.GenreName = genreTrimmed;
+                }
+            }
+        }
+    }
+
+
+    public override void CreateNewOutputRows()
+    {
+        /*
+          Add rows by calling the AddRow method on the member variable named "<Output Name>Buffer".
+          For example, call MyOutputBuffer.AddRow() if your output was named "MyOutput".
+        */
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_3974a55d1fb24791b8d54367c82590e4.csproj]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45bd229c-61ba-4011-a4f2-416317ab0a16}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_3974a55d1fb24791b8d54367c82590e4</RootNamespace>
+    <AssemblyName>SC_3974a55d1fb24791b8d54367c82590e4</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptComponent" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoExeName="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptComponent" GeneratedNamespace="SC_3974a55d1fb24791b8d54367c82590e4" IconIndex="0"></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_3974a55d1fb24791b8d54367c82590e4.Properties.Settings.get_Default():SC_3974a55d1fb24791b8d54367c82590e4.Properties.Sett" +
+    "ings")]
+
+namespace SC_3974a55d1fb24791b8d54367c82590e4.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Entrée0Buffer: ScriptBuffer
+
+{
+    public Entrée0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public Int64 ContentId
+    {
+        get
+        {
+            return Buffer.GetInt64(BufferColumnIndexes[0]);
+        }
+    }
+    public bool ContentId_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String GenreListClean
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+    }
+    public bool GenreListClean_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public Int32 ContentTypeKey
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[2]);
+        }
+    }
+    public bool ContentTypeKey_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+
+public class Sortie1Buffer: ScriptBuffer
+
+{
+    public Sortie1Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String GenreName
+    {
+        set
+        {
+            this[0] = value;
+        }
+    }
+    public bool GenreName_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(0);
+            }
+            else
+            {
+                throw new InvalidOperationException("La propriété IsNull ne peut pas prendre la valeur False. Affectez plutôt une valeur à la colonne.");
+            }
+        }
+    }
+
+    public Int32 ContentTypeKey
+    {
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool ContentTypeKey_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("La propriété IsNull ne peut pas prendre la valeur False. Affectez plutôt une valeur à la colonne.");
+            }
+        }
+    }
+
+    public Int64 ContentId
+    {
+        set
+        {
+            this[2] = value;
+        }
+    }
+    public bool ContentId_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(2);
+            }
+            else
+            {
+                throw new InvalidOperationException("La propriété IsNull ne peut pas prendre la valeur False. Affectez plutôt une valeur à la colonne.");
+            }
+        }
+    }
+
+    new public void AddRow()
+    {
+        base.AddRow();
+    }
+
+    new public void SetEndOfRowset()
+    {
+        base.SetEndOfRowset();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Project]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:Language>msBuild</msb:Language>
+    <msb:CodeName>SC_3974a55d1fb24791b8d54367c82590e4</msb:CodeName>
+    <msb:DisplayName>SC_3974a55d1fb24791b8d54367c82590e4</msb:DisplayName>
+    <msb:ProjectId>{8A048FA7-4442-4D70-8274-E3F6EF74DEC6}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_3974a55d1fb24791b8d54367c82590e4.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_3974a55d1fb24791b8d54367c82590e4")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_3974a55d1fb24791b8d54367c82590e4")]
+[assembly: AssemblyCopyright("Copyright @  2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_3974a55d1fb24791b8d54367c82590e4.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_3974a55d1fb24791b8d54367c82590e4.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_3974a55d1fb24791b8d54367c82590e4.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_3974a55d1fb24791b8d54367c82590e4.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_3974a55d1fb24791b8d54367c82590e4.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stocke la représentation binaire du composant"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="2">
+                    <arrayElement
+                      dataType="System.String"><![CDATA[SC_3974a55d1fb24791b8d54367c82590e4.dll]]></arrayElement>
+                    <arrayElement
+                      dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDALlwLWkAAAAAAAAAAOAAIiALATAAABgAAAAIAAAAAAAAZjcA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAABQ3AABPAAAAAEAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAbBcAAAAgAAAAGAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAQAAAAAYAAAAaAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAIAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABI
+NwAAAAAAAEgAAAACAAUAYCMAAPwSAAABAAAAAAAAAFw2AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACioTMAUAhQAAAAEAABEDbwoAAAYt
+fANvCQAABigSAAAKLW8DbwkAAAYXjRsAAAElFh98nW8TAAAKChYLK04GB5pvFAAACgwIKBUAAAot
+OQJ7AwAABG8WAAAGAnsDAAAEA28HAAAGbxQAAAYCewMAAAQDbwsAAAZvEgAABgJ7AwAABAhvEAAA
+BgcXWAsHBo5pMqwqBioeAigZAAAGKioCAwQFKBYAAAoqUgJ7FwAACgJ7GAAAChaUbxkAAAoqIgIW
+KBoAAAoqUgJ7FwAACgJ7GAAACheUbxsAAAoqIgIXKBoAAAoqUgJ7FwAACgJ7GAAAChiUbxwAAAoq
+IgIYKBoAAAoqHgIoHQAACioeAigeAAAKKiYCFgMoHwAACipaAywIAhYoIAAACipyAQAAcHMhAAAK
+ejoCFwOMHQAAASgfAAAKKloDLAgCFyggAAAKKnIBAABwcyEAAAp6OgIYA4weAAABKB8AAAoqWgMs
+CAIYKCAAAAoqcgEAAHBzIQAACnoeAigiAAAKKh4CKCMAAAoqfgIoJAAACgICcyEAAAZ9AQAABAIC
+cyIAAAZ9AgAABCoAAAATMAQATwAAAAAAAAAEcsYAAHAabyUAAAosFQIFAgMoJgAACg4EcwYAAAZv
+HwAABgVvJwAACiwjAgJ7BAAABBdYfQQAAAQCewQAAAQXMwwCbxsAAAYCKBwAAAYqbgJ7AwAABCwS
+AnsDAAAEbxcAAAYCFH0DAAAEKgATMAUAPQAAAAIAABEWCisuBAaUDgRy2AAAcCgoAAAKMxkCBQaa
+AgQGlCgmAAAKDgRzDwAABn0DAAAEBhdYCgYDMs4Cbx4AAAYqSisHAgNvIAAABgNvDQAABi3xKjoC
+KCkAAAoCA30FAAAEKjoCKCkAAAoCA30GAAAEKh4CKCkAAAoqrn4HAAAELR5y6gAAcNAIAAACKCoA
+AApvKwAACnMsAAAKgAcAAAR+BwAABCoafggAAAQqHgKACAAABCoafgkAAAQqHgIoLQAACioucygA
+AAaACQAABCpCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAABoBwAAI34AANQHAADE
+BwAAI1N0cmluZ3MAAAAAmA8AAFwBAAAjVVMA9BAAABAAAAAjR1VJRAAAAAQRAAD4AQAAI0Jsb2IA
+AAAAAAAAAgAAAVcVogEJAQAAAPoBMwAWAAABAAAAIgAAAAkAAAAJAAAAKQAAABoAAAAtAAAAEAAA
+AAIAAAAEAAAADwAAABAAAAABAAAABAAAAAEAAAAAAGsDAQAAAAAABgBiAm4FBgD2Am4FBgCuAVsF
+DwDiBQAABgDbAZEEBgBFApEEBgAmApEEBgDdApEEBgCCApEEBgCbApEEBgDyAZEEBgANAjEDCgC2
+AvsACgAjBfsADgAUBfsACgDaBPsACgDrBvsABgCVBjEEBgCRAVsFBgA0BY4FBgDOBHwEEgBhAVUD
+EgDCAVUDEgBJAWcEBgB2AW4FBgBOAzEEBgDyBDEEBgCjBDEEBgAEADEEBgANADEEBgC9BDEEBgAc
+ATEEBgC/ADEEBgCtB5EEAAAAADcAAAAAAAEAAQABABAAXAQAABQAAQABAAEAEAD3BAAAOQABAAYA
+AQAQAAYFAAA5AAEADwABABAAzQYAAEUAAQAZAAEAEABfBgAASQAFACEAAQAQACAGAABJAAYAIgAA
+ABAAlQXxBUkABwAjAAABEABPBvEFYQAJACcABgBfBqMABgAgBqcABgAGBasAAQB5AK8AAQDbBrIA
+AQDbBrIAEQA9BLYAEQA5AboAEQCvAL4AUCAAAAAAxgAUAwYAAQBYIAAAAADGAB8DBgABAGAgAAAA
+AMYAYgfCAAEA8SAAAAAAxgCBBgYAAgDzIAAAAACGGEQFBgACAPsgAAAAAIYYRAUyAAIABiEAAAAA
+hghdAMgABQAbIQAAAACGCJMDWAAFACQhAAAAAIYISQQuAAUAOSEAAAAAhgjSA1gABQBCIQAAAACG
+CIMHzAAFAFchAAAAAIYI7ANYAAUAYCEAAAAAhgB7B1gABQBoIQAAAACGAK8GWAAFAPsgAAAAAIYY
+RAUyAAUAcCEAAAAAhgjjABAACAB6IQAAAACGCL0D0AAJAJEhAAAAAIYIlgcBAAoAoCEAAAAAhggG
+BNAACwC3IQAAAACGCGsA1QAMAMYhAAAAAIYIqAPQAA0A3SEAAAAAhgBbBwYADgDlIQAAAACGAKwG
+BgAOAGghAAAAAIYArwZYAA4A7SEAAAAAhhhEBQYADgAQIgAAAADGAEIH2gAOAPEgAAAAAMYBcwYG
+ABIAayIAAAAAgQCIAAYAEgCIIgAAAADGAE8H5AASAPEgAAAAAMYBgQYGABYA0SIAAAAAxgE5B8IA
+FgDxIAAAAADGAWIHwgAXAOQiAAAAAIYYRAXwABgA8yIAAAAAhhhEBfAAGQACIwAAAACDGEQFBgAa
+AAojAAAAAJMIMAX2ABoANiMAAAAAkwghAfsAGgA9IwAAAACTCC0BAAEaAEUjAAAAAJYIwQYGARsA
+TCMAAAAAhhhEBQYAGwBUIwAAAACRGEoFCwEbAAAAAQB/BwAAAQApBQAAAgAqBgAAAwDoBAAAAQAp
+BQAAAgAqBgAAAwDoBAAAAQArAwAAAQArAwAAAQArAwAAAQArAwAAAQArAwAAAQArAwAAAQBAAAAA
+AgDxAAAAAwApBQAABADoBAAAAQB5BgAAAgBRBQAAAwBrBgAABADoBAAAAQApBQAAAQB/BwAAAQDx
+BgAAAQDxBgAAAQArAwkARAUBABEARAUGABkARAUKACkARAUQADEARAUQADkARAUQAEEARAUQAEkA
+RAUQAFEARAUQAFkARAUQAGEARAUQAGkARAUGAJkARAUGALkARAUVAMkARAUGAIkAFAMGAIkAHwMG
+ANEAnAAiANEAuwYnANEAOAQuANEAtgciAHEARAUyAHEAKQU8AHEAKgZAAHkACgBEAHEAGQRJAHkA
+SwNOAHkAAQBTAHEAewdYAHEArwZYAHEAKARcAHEAIAQBAOEARAUQAHEAWwcGAHEArAYGAIkARAUG
+ANEAWAZiAIkAPgZpAHkAnAZYAIkASABzAJEARAUGAAEB0QB6AAEBqQeDAKEARAWJAMEARAUGAC4A
+CwAuAS4AEwA3AS4AGwBWAS4AIwBfAS4AKwCIAS4AMwCIAS4AOwCIAS4AQwBfAS4ASwCOAS4AUwCI
+AS4AWwClAUMAYwDzAQMBawDzASEBewDzAakBcwBWAckBcwBWARsAbwADAAEABAAHAAgADQAJAA8A
+AABvAA8BAACsAxMBAABNBBcBAADWAxMBAACaBxsBAAAKBBMBAADnABcBAADBAxMBAACaBxsBAAAK
+BBMBAABvAA8BAACsAxMBAAA0BR8BAABBASQBAADFBikBAgAHAAMAAgAIAAUAAgAJAAcAAgAKAAkA
+AgALAAsAAgAMAA0AAQAQAA8AAQARABEAAQASABMAAQATABUAAQAUABcAAQAVABkAAgAkABsAAgAl
+AB0AAQAmAB0AAgAnAB8ABIAAAAEAAAAAAAAAAAAAAAAAEwAAAAQAAAAAAAAAAAAAAJEAVAAAAAAA
+EAAAAAAAAAAAAAAAmgD7BgAAAAAQAAAAAAAAAAAAAACaABgHAAAAAAQAAAAAAAAAAAAAAJEAMQQA
+AAAAAAAAAAEAAACfBQAAAAAAR2V0SW50MzIAR2V0SW50NjQAU0NfMzk3NGE1NWQxZmIyNDc5MWI4
+ZDU0MzY3YzgyNTkwZTQAPE1vZHVsZT4ASW5wdXRJRABHZXRPdXRwdXRJRABtc2NvcmxpYgBnZXRf
+Q29udGVudElkAHNldF9Db250ZW50SWQASW5wdXRzRmluaXNoZWQATWFya091dHB1dHNGaW5pc2hl
+ZABJc051bGxPcldoaXRlU3BhY2UAZGVmYXVsdEluc3RhbmNlAFJ1bnRpbWVUeXBlSGFuZGxlAEdl
+dFR5cGVGcm9tSGFuZGxlAHNldF9HZW5yZU5hbWUASW5wdXROYW1lAE1pY3Jvc29mdC5TcWxTZXJ2
+ZXIuRHRzLlBpcGVsaW5lAFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0
+dXJlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRlAENvbXBpbGVy
+R2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJs
+ZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0
+ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRyaWJ1dGUAQXNz
+ZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUA
+Q29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUA
+QXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBvbmVudEVudHJ5UG9pbnRB
+dHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0
+cmlidXRlAFByZUV4ZWN1dGUAUG9zdEV4ZWN1dGUAdmFsdWUAU3lzdGVtLlJ1bnRpbWUuVmVyc2lv
+bmluZwBHZXRTdHJpbmcAU3lzdGVtLkNvbXBvbmVudE1vZGVsAFNDXzM5NzRhNTVkMWZiMjQ3OTFi
+OGQ1NDM2N2M4MjU5MGU0LmRsbABnZXRfQ29udGVudElkX0lzTnVsbABzZXRfQ29udGVudElkX0lz
+TnVsbABzZXRfR2VucmVOYW1lX0lzTnVsbABnZXRfR2VucmVMaXN0Q2xlYW5fSXNOdWxsAGdldF9D
+b250ZW50VHlwZUtleV9Jc051bGwAc2V0X0NvbnRlbnRUeXBlS2V5X0lzTnVsbABTZXROdWxsAHNl
+dF9JdGVtAFN5c3RlbQBUcmltAHJlc291cmNlTWFuAGdldF9HZW5yZUxpc3RDbGVhbgBTY3JpcHRN
+YWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0aW9uAFN5c3RlbS5SZWZs
+ZWN0aW9uAEludmFsaWRPcGVyYXRpb25FeGNlcHRpb24AU3RyaW5nQ29tcGFyaXNvbgBDdWx0dXJl
+SW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABDaGFyAEVudHLDqWUwQnVmZmVyAFNvcnRpZTFC
+dWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNvdXJjZU1hbmFnZXIALmN0
+b3IALmNjdG9yAE91dHB1dElEcwBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29t
+cGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNDXzM5NzRhNTVkMWZiMjQ3OTFiOGQ1NDM2
+N2M4MjU5MGU0LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBT
+Q18zOTc0YTU1ZDFmYjI0NzkxYjhkNTQzNjdjODI1OTBlNC5Qcm9wZXJ0aWVzAFZhcmlhYmxlcwBC
+dWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MARXF1YWxzAENvbm5l
+Y3Rpb25zAEJ1ZmZlcnMARmluaXNoT3V0cHV0cwBDcmVhdGVOZXdPdXRwdXRSb3dzAE9iamVjdABn
+ZXRfRW5kT2ZSb3dzZXQAU2V0RW5kT2ZSb3dzZXQAU3BsaXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBv
+bmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9uZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
+VHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QARW50csOpZTBfUHJvY2Vz
+c0lucHV0AFByaW1lT3V0cHV0AEFkZFJvdwBFbnRyw6llMF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJv
+dwBnZXRfQ29udGVudFR5cGVLZXkAc2V0X0NvbnRlbnRUeXBlS2V5AGdldF9Bc3NlbWJseQBJc051
+bGxPckVtcHR5AACAw0wAYQAgAHAAcgBvAHAAcgBpAOkAdADpACAASQBzAE4AdQBsAGwAIABuAGUA
+IABwAGUAdQB0ACAAcABhAHMAIABwAHIAZQBuAGQAcgBlACAAbABhACAAdgBhAGwAZQB1AHIAIABG
+AGEAbABzAGUALgAgAEEAZgBmAGUAYwB0AGUAegAgAHAAbAB1AHQA9AB0ACAAdQBuAGUAIAB2AGEA
+bABlAHUAcgAgAOAAIABsAGEAIABjAG8AbABvAG4AbgBlAC4AARFFAG4AdAByAOkAZQAgADAAARFT
+AG8AcgB0AGkAZQAgADEAAHFTAEMAXwAzADkANwA0AGEANQA1AGQAMQBmAGIAMgA0ADcAOQAxAGIA
+OABkADUANAAzADYANwBjADgAMgA1ADkAMABlADQALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBl
+AHMAbwB1AHIAYwBlAHMAAF2aFdNK0GFLtZ1ys6omWWIABCABAQgDIAABBSABARERBCABAQ4FIAEB
+EVkGBwMdDggOBAABAg4GIAEdDh0DAyAADgkgAwESPR0IEkEDBhI9AwYdCAQgAQoIBCABAggEIAEO
+CAQgAQgIAyAAAgUgAgEIHAYgAgIOEX0FIAEdCAgDBwEIBgACCBJBDggAARKAgRGAhQUgABKAiQcg
+AgEOEoCJCLd6XFYZNOCJCImEXc2AgMyRAwYSGAMGEhwDBhIQAgYIAwYSRQMGElEDBhJVAwYSJAUg
+AQESDAMgAAoDIAAIBCABAQIEIAEBCgkgBAEIDhI9EkELIAQBCB0IHRI9EkEFIAEBEkUEAAASUQQA
+ABJVBQABARJVBAAAEiQDAAABAygACgMoAAIDKAAOAygACAQIABJRBAgAElUECAASJAgBAAgAAAAA
+AB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfMzk3NGE1NWQx
+ZmIyNDc5MWI4ZDU0MzY3YzgyNTkwZTQAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyNQAATQEA
+HC5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43LjIBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lFC5O
+RVQgRnJhbWV3b3JrIDQuNy4yBAEAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMu
+UmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJh
+bCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRp
+bWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAAPDcAAAAAAAAAAAAAVjcAAAAgAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAEg3AAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwA
+AAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgA
+AABYQAAA7AMAAAAAAAAAAAAA7AM0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAA
+AL0E7/4AAAEAAAABAAAAAAAAAAEAAAAAAD8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAA
+AQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAA
+AAAAAACwBEwDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAACgDAAABADAAMAAwADAA
+MAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5
+AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAA
+UwBDAF8AMwA5ADcANABhADUANQBkADEAZgBiADIANAA3ADkAMQBiADgAZAA1ADQAMwA2ADcAYwA4
+ADIANQA5ADAAZQA0AAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAA
+LgAwAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMAXwAzADkANwA0AGEANQA1
+AGQAMQBmAGIAMgA0ADcAOQAxAGIAOABkADUANAAzADYANwBjADgAMgA1ADkAMABlADQALgBkAGwA
+bAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0
+ACAAQAAgACAAMgAwADIANQAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBhAHIAawBzAAAA
+AAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMAQwBfADMAOQA3
+ADQAYQA1ADUAZAAxAGYAYgAyADQANwA5ADEAYgA4AGQANQA0ADMANgA3AGMAOAAyADUAOQAwAGUA
+NAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAAAABTAEMAXwAzADkANwA0
+AGEANQA1AGQAMQBmAGIAMgA0ADcAOQAxAGIAOABkADUANAAzADYANwBjADgAMgA1ADkAMABlADQA
+AAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAI
+AAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAGg3AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
+                  </arrayElements>
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom du projet Microsoft Visual Studio Tools for Applications. Les noms des projets doivent être uniques dans un package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_3974a55d1fb24791b8d54367c82590e4</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le langage de programmation utilisé par le script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une liste séparée par des virgules de variables en lecture seule."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une liste séparée par des virgules de variables en lecture/écriture."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Liste des points d'arrêt présents dans le script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Somme de contrôle pour faire correspondre les métadonnées de composant avec les codes compilés."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE">DA</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Transformation\Composant Script.Inputs[Entrée 0]"
+                  hasSideEffects="true"
+                  name="Entrée 0">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Composant Script.Inputs[Entrée 0].Columns[ContentId]"
+                      cachedDataType="i8"
+                      cachedName="ContentId"
+                      lineageId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentId]" />
+                    <inputColumn
+                      refId="Package\Transformation\Composant Script.Inputs[Entrée 0].Columns[GenreListClean]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="GenreListClean"
+                      lineageId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[GenreListClean]" />
+                    <inputColumn
+                      refId="Package\Transformation\Composant Script.Inputs[Entrée 0].Columns[ContentTypeKey]"
+                      cachedDataType="i4"
+                      cachedName="ContentTypeKey"
+                      lineageId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentTypeKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Composant Script.Outputs[Sortie 1]"
+                  hasSideEffects="true"
+                  name="Sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[GenreName]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[GenreName]"
+                      name="GenreName" />
+                    <outputColumn
+                      refId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[ContentTypeKey]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[ContentTypeKey]"
+                      name="ContentTypeKey" />
+                    <outputColumn
+                      refId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[ContentId]"
+                      dataType="i8"
+                      lineageId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[ContentId]"
+                      name="ContentId" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Fact ContentGenre"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Fact ContentGenre"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dw].[FactContentGenre]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Fact ContentGenre.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].Columns[ContentTypeKey]"
+                      cachedDataType="i4"
+                      cachedName="ContentTypeKey"
+                      externalMetadataColumnId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].ExternalColumns[ContentTypeKey]"
+                      lineageId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[ContentTypeKey]" />
+                    <inputColumn
+                      refId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].Columns[ContentId]"
+                      cachedDataType="i8"
+                      cachedName="ContentId"
+                      externalMetadataColumnId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].ExternalColumns[ContentId]"
+                      lineageId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[ContentId]" />
+                    <inputColumn
+                      refId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].Columns[GenreKey]"
+                      cachedDataType="i4"
+                      cachedName="GenreKey"
+                      externalMetadataColumnId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].ExternalColumns[GenreKey]"
+                      lineageId="Package\Transformation\Recherche GenreKey.Outputs[Sortie de recherche avec correspondance].Columns[GenreKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].ExternalColumns[ContentGenreKey]"
+                      dataType="i4"
+                      name="ContentGenreKey" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].ExternalColumns[ContentTypeKey]"
+                      dataType="i4"
+                      name="ContentTypeKey" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].ExternalColumns[ContentId]"
+                      dataType="i8"
+                      name="ContentId" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB].ExternalColumns[GenreKey]"
+                      dataType="i4"
+                      name="GenreKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Fact ContentGenre.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Fact ContentGenre.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Fact ContentGenre.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Fact ContentGenre.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Fact ContentGenre.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Recherche GenreKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche GenreKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dw].[DimGenre]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dw].[DimGenre]) [refTable]
+where [refTable].[GenreName] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="GenreKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GenreName" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[GenreName]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Recherche GenreKey.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformation\Recherche GenreKey.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Recherche GenreKey.Inputs[Entrée de recherche].Columns[GenreName]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="GenreName"
+                      lineageId="Package\Transformation\Composant Script.Outputs[Sortie 1].Columns[GenreName]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">GenreName</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Recherche GenreKey.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Transformation\Recherche GenreKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche GenreKey.Outputs[Sortie de recherche avec correspondance].Columns[GenreKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Transformation\Recherche GenreKey.Outputs[Sortie de recherche avec correspondance].Columns[GenreKey]"
+                      name="GenreKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">GenreKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche GenreKey.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Transformation\Recherche GenreKey.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche GenreKey.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Transformation\Recherche GenreKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche GenreKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche GenreKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Recherche GenreKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche GenreKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Staging Film"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Staging Film"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dw].[DimGenre]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+    movie_id,
+    genre_list,
+    1 AS ContentTypeKey
+FROM staging.FilmsRaw;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Staging Film.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse 1]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[movie_id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].ExternalColumns[movie_id]"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[movie_id]"
+                      name="movie_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[genre_list]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].ExternalColumns[genre_list]"
+                      length="1000"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[genre_list]"
+                      name="genre_list"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[ContentTypeKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].ExternalColumns[ContentTypeKey]"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[ContentTypeKey]"
+                      name="ContentTypeKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].ExternalColumns[movie_id]"
+                      dataType="i8"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].ExternalColumns[genre_list]"
+                      dataType="wstr"
+                      length="1000"
+                      name="genre_list" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].ExternalColumns[ContentTypeKey]"
+                      dataType="i4"
+                      name="ContentTypeKey" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[movie_id]"
+                      dataType="i8"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[movie_id]"
+                      name="movie_id" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[genre_list]"
+                      dataType="wstr"
+                      length="1000"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[genre_list]"
+                      name="genre_list" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[ContentTypeKey]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[ContentTypeKey]"
+                      name="ContentTypeKey" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Staging Serie"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Staging Serie"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+    tv_id,
+    genre_list,
+    2 AS ContentTypeKey
+FROM staging.SeriesRaw;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Staging Serie.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse 1]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[tv_id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].ExternalColumns[tv_id]"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[tv_id]"
+                      name="tv_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[genre_list]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].ExternalColumns[genre_list]"
+                      length="1000"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[genre_list]"
+                      name="genre_list"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[ContentTypeKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].ExternalColumns[ContentTypeKey]"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[ContentTypeKey]"
+                      name="ContentTypeKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].ExternalColumns[tv_id]"
+                      dataType="i8"
+                      name="tv_id" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].ExternalColumns[genre_list]"
+                      dataType="wstr"
+                      length="1000"
+                      name="genre_list" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].ExternalColumns[ContentTypeKey]"
+                      dataType="i4"
+                      name="ContentTypeKey" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[tv_id]"
+                      dataType="i8"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[tv_id]"
+                      name="tv_id" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[genre_list]"
+                      dataType="wstr"
+                      length="1000"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[genre_list]"
+                      name="genre_list" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[ContentTypeKey]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[ContentTypeKey]"
+                      name="ContentTypeKey" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Unir tout"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="Unir tout"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Transformation\Unir tout.Inputs[Unir tout entrée 1]"
+                  name="Unir tout entrée 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Unir tout.Inputs[Unir tout entrée 1].Columns[ContentTypeKey]"
+                      cachedDataType="i4"
+                      cachedName="ContentTypeKey"
+                      lineageId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB].Columns[ContentTypeKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentTypeKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Unir tout.Inputs[Unir tout entrée 1].Columns[GenreListClean]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="GenreListClean"
+                      lineageId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[GenreListClean]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[GenreListClean]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Unir tout.Inputs[Unir tout entrée 1].Columns[ContentId]"
+                      cachedDataType="i8"
+                      cachedName="ContentId"
+                      lineageId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[ContentId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentId]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Transformation\Unir tout.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Unir tout.Inputs[Entrée Union All 1].Columns[ContentTypeKey]"
+                      cachedDataType="i4"
+                      cachedName="ContentTypeKey"
+                      lineageId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB].Columns[ContentTypeKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentTypeKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Unir tout.Inputs[Entrée Union All 1].Columns[GenreListClean]"
+                      cachedDataType="wstr"
+                      cachedLength="1000"
+                      cachedName="GenreListClean"
+                      lineageId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie de colonne dérivée].Columns[GenreListClean]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[GenreListClean]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Unir tout.Inputs[Entrée Union All 1].Columns[ContentId]"
+                      cachedDataType="i8"
+                      cachedName="ContentId"
+                      lineageId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie de colonne dérivée].Columns[ContentId]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentId]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Transformation\Unir tout.Inputs[Entrée Union All 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentTypeKey]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentTypeKey]"
+                      name="ContentTypeKey" />
+                    <outputColumn
+                      refId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[GenreListClean]"
+                      dataType="wstr"
+                      length="1000"
+                      lineageId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[GenreListClean]"
+                      name="GenreListClean" />
+                    <outputColumn
+                      refId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentId]"
+                      dataType="i8"
+                      lineageId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1].Columns[ContentId]"
+                      name="ContentId" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Transformation.Paths[Sortie 1]"
+              endId="Package\Transformation\Recherche GenreKey.Inputs[Entrée de recherche]"
+              name="Sortie 1"
+              startId="Package\Transformation\Composant Script.Outputs[Sortie 1]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de colonne dérivée]"
+              endId="Package\Transformation\Unir tout.Inputs[Unir tout entrée 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de colonne dérivée1]"
+              endId="Package\Transformation\Unir tout.Inputs[Entrée Union All 1]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Transformation\Colonne dérivée 2.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Transformation\Fact ContentGenre.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Transformation\Recherche GenreKey.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de source OLE DB]"
+              endId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\Transformation\Staging Film.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de source OLE DB1]"
+              endId="Package\Transformation\Colonne dérivée 2.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\Transformation\Staging Serie.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\Transformation.Paths[Unir tout sortie 1]"
+              endId="Package\Transformation\Composant Script.Inputs[Entrée 0]"
+              name="Unir tout sortie 1"
+              startId="Package\Transformation\Unir tout.Outputs[Unir tout sortie 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Transformation"
+          TopLeft="418.333310476609,208.866665214234" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Transformation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Transformation\Staging Film"
+          TopLeft="45.8333308291104,28.5999998011192" />
+        <NodeLayout
+          Size="140.8,41.6"
+          Id="Package\Transformation\Staging Serie"
+          TopLeft="42.4999976779025,127.399999114076" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Transformation\Colonne dérivée 1"
+          TopLeft="289.999984155099,24.2666664979193" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Transformation\Colonne dérivée 2"
+          TopLeft="285.833317716089,128.266665774716" />
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de source OLE DB]"
+          TopLeft="181.83333082911,47.2333331495192">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.166653325989,0"
+              Start="0,0"
+              End="100.666653325989,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="100.666653325989,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de source OLE DB1]"
+          TopLeft="183.299997677903,148.633332444396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102.533320038187,0"
+              Start="0,0"
+              End="95.0333200381868,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="95.0333200381868,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="117.6,41.6"
+          Id="Package\Transformation\Unir tout"
+          TopLeft="615.833299685685,77.1333327969578" />
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de colonne dérivée]"
+          TopLeft="452.399984155099,45.0666664979193">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163.433315530586,47.2666662990385"
+              Start="0,0"
+              End="155.933315530586,47.2666662990385">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="90.4281378621164,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.4281378621164,0"
+                    Point2="94.4281378621164,0"
+                    Point3="94.4281378621164,4" />
+                  <mssgle:LineSegment
+                    End="94.4281378621164,43.2666662990385" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.4281378621164,43.2666662990385"
+                    Point2="94.4281378621164,47.2666662990385"
+                    Point3="98.4281378621164,47.2666662990385" />
+                  <mssgle:LineSegment
+                    End="155.933315530586,47.2666662990385" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de colonne dérivée1]"
+          TopLeft="448.233317716089,149.066665774716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="167.599981969596,-45.5333329777586"
+              Start="0,0"
+              End="160.099981969596,-45.5333329777586">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="92.8355451379887,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92.8355451379887,0"
+                    Point2="96.8355451379887,0"
+                    Point3="96.8355451379887,-4" />
+                  <mssgle:LineSegment
+                    End="96.8355451379887,-41.5333329777586" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.8355451379887,-41.5333329777586"
+                    Point2="96.8355451379887,-45.5333329777586"
+                    Point3="100.835545137989,-45.5333329777586" />
+                  <mssgle:LineSegment
+                    End="160.099981969596,-45.5333329777586" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Transformation\Composant Script"
+          TopLeft="589.166634476021,182.866665395035" />
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Unir tout sortie 1]"
+          TopLeft="672.099967080853,118.733332796958">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.1333325980768"
+              Start="0,0"
+              End="0,56.6333325980768">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.6333325980768" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Transformation\Recherche GenreKey"
+          TopLeft="582.499968173604,283.399998029272" />
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie 1]"
+          TopLeft="670.633301324813,224.466665395035">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.9333326342372"
+              Start="0,0"
+              End="0,51.4333326342372">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.4333326342372" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.4,41.6"
+          Id="Package\Transformation\Fact ContentGenre"
+          TopLeft="592.499967627229,389.999997287989" />
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="673.699967900417,324.999998029272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.9999992587169"
+              Start="0,0"
+              End="0,57.4999992587169">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.4999992587169" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,22.9453121293585,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Staging Film">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Staging Serie">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Recherche GenreKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dw].[DimGenre]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Fact ContentGenre">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

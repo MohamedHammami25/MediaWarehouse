@@ -1,0 +1,1944 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/30/2025 10:38:37 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-GNV28IH"
+  DTS:CreatorName="DESKTOP-GNV28IH\User"
+  DTS:DTSID="{66755739-B824-423D-8CE9-1F38ED14073D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1008.3"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package7"
+  DTS:PackageType="5"
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{295AD508-2072-4348-909D-0DC85BAFAAF3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D0505E3D-01A4-4516-8A9C-2674EA6D5B4C}"
+      DTS:ObjectName="DESKTOP-GNV28IH.MediaWarehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-GNV28IH;Initial Catalog=MediaWarehouse;Provider=MSOLEDBSQL19.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package7-{D0505E3D-01A4-4516-8A9C-2674EA6D5B4C}DESKTOP-GNV28IH.MediaWarehouse;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Transformation"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{07A05EEA-C598-4D32-88ED-ABBF8D7AD7CD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transformation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Transformation\Colonne dérivée 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="name"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[LEN]([TRIM](#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[name]})) == 0 ? NULL(DT_WSTR,500) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[name]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM(name)) == 0 ? NULL(DT_WSTR,500) : name</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[director]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="director"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[director]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[LEN]([TRIM](#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[director]})) == 0 ? NULL(DT_WSTR,500) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[director]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM(director)) == 0 ? NULL(DT_WSTR,500) : director</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[main_cast]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="main_cast"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[main_cast]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[LEN]([TRIM](#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[main_cast]})) == 0 ? NULL(DT_WSTR,2000) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[main_cast]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM(main_cast)) == 0 ? NULL(DT_WSTR,2000) : main_cast</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[user_score_average]"
+                      cachedDataType="r8"
+                      cachedName="user_score_average"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[user_score_average]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[user_score_average]} == 0 ? NULL(DT_R8) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[user_score_average]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">user_score_average == 0 ? NULL(DT_R8) : user_score_average</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[vote_count]"
+                      cachedDataType="i4"
+                      cachedName="vote_count"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[vote_count]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[vote_count]} == 0 ? NULL(DT_I4) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[vote_count]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">vote_count == 0 ? NULL(DT_I4) : vote_count</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[popularity]"
+                      cachedDataType="r8"
+                      cachedName="popularity"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[popularity]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[popularity]} == 0 ? NULL(DT_R8) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[popularity]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">popularity == 0 ? NULL(DT_R8) : popularity</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[overview]"
+                      cachedDataType="nText"
+                      cachedName="overview"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[overview]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[LEN]([TRIM]((DT_WSTR,4000)#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[overview]})) == 0 ? NULL(DT_WSTR,4000) : (DT_WSTR,4000)#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[overview]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM((DT_WSTR,4000)overview)) == 0 ? NULL(DT_WSTR,4000) : (DT_WSTR,4000)overview</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[runtime]"
+                      cachedDataType="i4"
+                      cachedName="runtime"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[runtime]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[runtime]} == 0 ? NULL(DT_I4) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[runtime]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">runtime == 0 ? NULL(DT_I4) : runtime</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[certification]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="certification"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[certification]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[LEN]([TRIM](#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[certification]})) == 0 ? NULL(DT_WSTR,50) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[certification]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEN(TRIM(certification)) == 0 ? NULL(DT_WSTR,50) : certification</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[budget]"
+                      cachedDataType="r8"
+                      cachedName="budget"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[budget]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[budget]} == 0 ? NULL(DT_R8) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[budget]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">budget == 0 ? NULL(DT_R8) : budget</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée].Columns[revenue]"
+                      cachedDataType="r8"
+                      cachedName="revenue"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[revenue]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[revenue]} == 0 ? NULL(DT_R8) : #{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[revenue]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">revenue == 0 ? NULL(DT_R8) : revenue</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\FactMovies"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="FactMovies"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dw].[FactMovies]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\FactMovies.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[popularity]"
+                      cachedDataType="r8"
+                      cachedName="popularity"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Popularity]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[popularity]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[overview]"
+                      cachedDataType="nText"
+                      cachedName="overview"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Overview]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[overview]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[runtime]"
+                      cachedDataType="i4"
+                      cachedName="runtime"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Runtime]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[runtime]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[budget]"
+                      cachedDataType="r8"
+                      cachedName="budget"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Budget]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[budget]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[revenue]"
+                      cachedDataType="r8"
+                      cachedName="revenue"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Revenue]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[revenue]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[DateKey]"
+                      lineageId="Package\Transformation\Recherche DateKey.Outputs[Sortie de recherche avec correspondance].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[LanguageKey]"
+                      cachedDataType="i4"
+                      cachedName="LanguageKey"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[LanguageKey]"
+                      lineageId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie de recherche avec correspondance].Columns[LanguageKey]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[CertificationKey]"
+                      cachedDataType="i4"
+                      cachedName="CertificationKey"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[CertificationKey]"
+                      lineageId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie de recherche avec correspondance].Columns[CertificationKey]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[movie_id]"
+                      cachedDataType="i8"
+                      cachedName="movie_id"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[MovieId]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[movie_id]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[name]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Title]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[PersonKey]"
+                      cachedDataType="i4"
+                      cachedName="PersonKey"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[DirectorKey]"
+                      lineageId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie de recherche avec correspondance].Columns[PersonKey]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[main_cast]"
+                      cachedDataType="wstr"
+                      cachedLength="2000"
+                      cachedName="main_cast"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[MainCast]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[main_cast]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[user_score_average]"
+                      cachedDataType="r8"
+                      cachedName="user_score_average"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[UserScoreAverage]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[user_score_average]" />
+                    <inputColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].Columns[vote_count]"
+                      cachedDataType="i4"
+                      cachedName="vote_count"
+                      externalMetadataColumnId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[VoteCount]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[vote_count]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[MovieKey]"
+                      dataType="i4"
+                      name="MovieKey" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[MovieId]"
+                      dataType="i8"
+                      name="MovieId" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="500"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[LanguageKey]"
+                      dataType="i4"
+                      name="LanguageKey" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[DirectorKey]"
+                      dataType="i4"
+                      name="DirectorKey" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[MainCast]"
+                      dataType="wstr"
+                      length="2000"
+                      name="MainCast" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[UserScoreAverage]"
+                      dataType="r8"
+                      name="UserScoreAverage" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[VoteCount]"
+                      dataType="i4"
+                      name="VoteCount" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Popularity]"
+                      dataType="r8"
+                      name="Popularity" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Overview]"
+                      dataType="nText"
+                      name="Overview" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Runtime]"
+                      dataType="i4"
+                      name="Runtime" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[CertificationKey]"
+                      dataType="i4"
+                      name="CertificationKey" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Budget]"
+                      dataType="r8"
+                      name="Budget" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB].ExternalColumns[Revenue]"
+                      dataType="r8"
+                      name="Revenue" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\FactMovies.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\FactMovies.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\FactMovies.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\FactMovies.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\FactMovies.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Recherche CertifiactionKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche CertifiactionKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dw].[DimCertification]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dw].[DimCertification]) [refTable]
+where [refTable].[CertificationName] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CertificationKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CertificationName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[certification]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Recherche CertifiactionKey.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformation\Recherche CertifiactionKey.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Recherche CertifiactionKey.Inputs[Entrée de recherche].Columns[certification]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="certification"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[certification]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">CertificationName</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Transformation\Recherche CertifiactionKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie de recherche avec correspondance].Columns[CertificationKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie de recherche avec correspondance].Columns[CertificationKey]"
+                      name="CertificationKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">CertificationKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Transformation\Recherche CertifiactionKey.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Transformation\Recherche CertifiactionKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Recherche DateKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche DateKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dw].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dw].[DimDate]) [refTable]
+where [refTable].[FullDate] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayOfWeek" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IsWeekend" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[release_date]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Recherche DateKey.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformation\Recherche DateKey.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Recherche DateKey.Inputs[Entrée de recherche].Columns[release_date]"
+                      cachedDataType="dbDate"
+                      cachedName="release_date"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[release_date]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">FullDate</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Recherche DateKey.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Transformation\Recherche DateKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche DateKey.Outputs[Sortie de recherche avec correspondance].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Transformation\Recherche DateKey.Outputs[Sortie de recherche avec correspondance].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">DateKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche DateKey.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Transformation\Recherche DateKey.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche DateKey.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Transformation\Recherche DateKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche DateKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche DateKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Recherche DateKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche DateKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Recherche DirectorKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche DirectorKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dw].[DimPerson]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dw].[DimPerson]) [refTable]
+where [refTable].[PersonName] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PersonKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PersonName" dataType="DT_WSTR" length="500" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PersonRole" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[director]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Recherche DirectorKey.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformation\Recherche DirectorKey.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Recherche DirectorKey.Inputs[Entrée de recherche].Columns[director]"
+                      cachedDataType="wstr"
+                      cachedLength="500"
+                      cachedName="director"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[director]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">PersonName</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Transformation\Recherche DirectorKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie de recherche avec correspondance].Columns[PersonKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie de recherche avec correspondance].Columns[PersonKey]"
+                      name="PersonKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">PersonKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Transformation\Recherche DirectorKey.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Transformation\Recherche DirectorKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Recherche LanguageKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche LanguageKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dw].[DimLanguage]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dw].[DimLanguage]) [refTable]
+where [refTable].[LanguageCode] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="LanguageKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LanguageCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[original_language]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Recherche LanguageKey.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transformation\Recherche LanguageKey.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transformation\Recherche LanguageKey.Inputs[Entrée de recherche].Columns[original_language]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="original_language"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[original_language]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">LanguageCode</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Transformation\Recherche LanguageKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie de recherche avec correspondance].Columns[LanguageKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie de recherche avec correspondance].Columns[LanguageKey]"
+                      name="LanguageKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">LanguageKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Transformation\Recherche LanguageKey.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Transformation\Recherche LanguageKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transformation\Staging Films"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Staging Films"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT movie_id, name, release_date, original_language, director, main_cast, user_score_average, vote_count, popularity, overview, runtime, certification, budget, revenue
+FROM staging.FilmsRaw</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transformation\Staging Films.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-GNV28IH.MediaWarehouse]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[movie_id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[movie_id]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[movie_id]"
+                      name="movie_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[name]"
+                      length="500"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[release_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[release_date]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[release_date]"
+                      name="release_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[original_language]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[original_language]"
+                      length="10"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[original_language]"
+                      name="original_language"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[director]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[director]"
+                      length="500"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[director]"
+                      name="director"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[main_cast]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[main_cast]"
+                      length="2000"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[main_cast]"
+                      name="main_cast"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[user_score_average]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[user_score_average]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[user_score_average]"
+                      name="user_score_average"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[vote_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[vote_count]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[vote_count]"
+                      name="vote_count"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[popularity]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[popularity]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[popularity]"
+                      name="popularity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[overview]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[overview]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[overview]"
+                      name="overview"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[runtime]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[runtime]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[runtime]"
+                      name="runtime"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[certification]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[certification]"
+                      length="50"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[certification]"
+                      name="certification"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[budget]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[budget]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[budget]"
+                      name="budget"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[revenue]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[revenue]"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].Columns[revenue]"
+                      name="revenue"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[movie_id]"
+                      dataType="i8"
+                      name="movie_id" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[name]"
+                      dataType="wstr"
+                      length="500"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[release_date]"
+                      dataType="dbDate"
+                      name="release_date" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[original_language]"
+                      dataType="wstr"
+                      length="10"
+                      name="original_language" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[director]"
+                      dataType="wstr"
+                      length="500"
+                      name="director" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[main_cast]"
+                      dataType="wstr"
+                      length="2000"
+                      name="main_cast" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[user_score_average]"
+                      dataType="r8"
+                      name="user_score_average" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[vote_count]"
+                      dataType="i4"
+                      name="vote_count" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[popularity]"
+                      dataType="r8"
+                      name="popularity" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[overview]"
+                      dataType="nText"
+                      name="overview" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[runtime]"
+                      dataType="i4"
+                      name="runtime" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[certification]"
+                      dataType="wstr"
+                      length="50"
+                      name="certification" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[budget]"
+                      dataType="r8"
+                      name="budget" />
+                    <externalMetadataColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB].ExternalColumns[revenue]"
+                      dataType="r8"
+                      name="revenue" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[movie_id]"
+                      dataType="i8"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[movie_id]"
+                      name="movie_id" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[name]"
+                      dataType="wstr"
+                      length="500"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[release_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[release_date]"
+                      name="release_date" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[original_language]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[original_language]"
+                      name="original_language" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[director]"
+                      dataType="wstr"
+                      length="500"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[director]"
+                      name="director" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[main_cast]"
+                      dataType="wstr"
+                      length="2000"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[main_cast]"
+                      name="main_cast" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[user_score_average]"
+                      dataType="r8"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[user_score_average]"
+                      name="user_score_average" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[vote_count]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[vote_count]"
+                      name="vote_count" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[popularity]"
+                      dataType="r8"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[popularity]"
+                      name="popularity" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[overview]"
+                      dataType="nText"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[overview]"
+                      name="overview" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[runtime]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[runtime]"
+                      name="runtime" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[certification]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[certification]"
+                      name="certification" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[budget]"
+                      dataType="r8"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[budget]"
+                      name="budget" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[revenue]"
+                      dataType="r8"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[revenue]"
+                      name="revenue" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transformation\Staging Films.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Transformation.Paths[Sortie de colonne dérivée]"
+              endId="Package\Transformation\Recherche DateKey.Inputs[Entrée de recherche]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Transformation\Colonne dérivée 1.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Transformation\Recherche LanguageKey.Inputs[Entrée de recherche]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Transformation\Recherche DateKey.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de recherche avec correspondance1]"
+              endId="Package\Transformation\Recherche DirectorKey.Inputs[Entrée de recherche]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Transformation\Recherche LanguageKey.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de recherche avec correspondance2]"
+              endId="Package\Transformation\Recherche CertifiactionKey.Inputs[Entrée de recherche]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Transformation\Recherche DirectorKey.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de recherche avec correspondance3]"
+              endId="Package\Transformation\FactMovies.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Transformation\Recherche CertifiactionKey.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Transformation.Paths[Sortie de source OLE DB]"
+              endId="Package\Transformation\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\Transformation\Staging Films.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="148,41.6"
+          Id="Package\Transformation"
+          TopLeft="349.999980876844,220.133331802554" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Transformation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Transformation\Recherche DateKey"
+          TopLeft="471.666640895937,27.7333331404792" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Transformation\Recherche LanguageKey"
+          TopLeft="460.833308154511,131.733332417276" />
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\Transformation\FactMovies"
+          TopLeft="491.666639803185,395.199997251828" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Transformation\Recherche CertifiactionKey"
+          TopLeft="457.499975003303,313.733331151671" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Transformation\Colonne dérivée 1"
+          TopLeft="263.333318945435,26.8666664798392" />
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Transformation\Recherche DirectorKey"
+          TopLeft="464.166641305719,221.866665123834" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\Transformation\Staging Films"
+          TopLeft="54.9999969949327,28.5999998011192" />
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de source OLE DB]"
+          TopLeft="196.599996994933,48.5333331404792">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="66.7333219505022,0"
+              Start="0,0"
+              End="59.2333219505022,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59.2333219505022,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de recherche avec correspondance3]"
+          TopLeft="558.783307403244,355.333331151671">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.8666661001571"
+              Start="0,0"
+              End="0,32.3666661001571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.3666661001571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,10.3786455500785,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de recherche avec correspondance2]"
+          TopLeft="558.433308154511,263.466665123834">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.2666660278376"
+              Start="0,0"
+              End="0,42.7666660278376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7666660278376" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,15.5786455139188,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de recherche avec correspondance1]"
+          TopLeft="557.899974730115,173.333332417276">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.5333327065574"
+              Start="0,0"
+              End="0,41.0333327065574">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0333327065574" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,14.7119788532787,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="558.049974525224,69.3333331404792">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.3999992767969"
+              Start="0,0"
+              End="0,54.8999992767969">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.8999992767969" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,21.6453121383984,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Transformation.Paths[Sortie de colonne dérivée]"
+          TopLeft="425.733318945435,48.0999998101592">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.9333219505021,0"
+              Start="0,0"
+              End="38.4333219505021,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.4333219505021,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Recherche DateKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dw].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Recherche LanguageKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dw].[DimLanguage]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\FactMovies">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Recherche CertifiactionKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dw].[DimCertification]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Recherche DirectorKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dw].[DimPerson]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transformation\Staging Films">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
